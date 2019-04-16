@@ -9,7 +9,11 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "cssnano": "^4.1.10",
+    "postcss-aspect-ratio-mini": "^1.0.1",
+    "postcss-px-to-viewport": "^1.1.0",
     "vue": "^2.6.6",
+    "vue-content-loading": "^1.6.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
@@ -46,7 +50,10 @@
         "viewportHeight": 1334,
         "unitPrecision": 3,
         "viewportUnit": "vw",
-        "selectorBlackList": [".ignore", ".hairlines"],
+        "selectorBlackList": [
+          ".ignore",
+          ".hairlines"
+        ],
         "minPixelValue": 1,
         "mediaQuery": false
       }
