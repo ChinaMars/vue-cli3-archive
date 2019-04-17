@@ -34,6 +34,8 @@
       <rect x="260.5" y="233.8" rx="0" ry="0" width="48" height="18" />
       <rect x="340.5" y="235.8" rx="0" ry="0" width="48" height="18" />
     </vue-content-loading>
+      <Login></Login>
+
   </div>
 </template>
 
@@ -41,12 +43,14 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue';
 import VueContentLoading from 'vue-content-loading';
+import Login from '@/components/login/Login.vue'
 
 export default {
   name: 'home',
   components: {
     HelloWorld,
-    VueContentLoading
+    VueContentLoading,
+    Login,
   }
 }
 </script>
