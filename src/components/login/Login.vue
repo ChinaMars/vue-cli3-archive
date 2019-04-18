@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>{{title}}</h1>
     <label>姓名</label>
     <input v-model="name">
     <label>密码</label>
@@ -25,10 +26,19 @@ export default {
 
   methods: {
     submit() {
-      api.fetchLogin({ name: this.name, pas: this.pas });
+      api.fetchLogin({ name: this.name, pas: this.pas }).then(res => {
+        if(res.isSuccess){
+          this.$toast.success('登陆成功，fuck you ')
+        }
+      });
     }
   },
 
+  computed: {
+    title() {
+      return this.$store._modules.root.state.login.title;
+    }
+  },
   created() {}
 };
 </script>

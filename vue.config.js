@@ -31,19 +31,6 @@ module.exports = {
 
         res.end()
       });
-
-      // app.get('/',function (req,res) {
-      //     res.write('123');
-      //     res.end()
-      // });
     }
-    // proxy: {
-    //     '/api':
-    //         {target: 'http://192.168.173.1:8080',
-    //             pathRewrite:{
-    //             '^api/':''
-    //             }
-    //         }
-    // }
   },
 }

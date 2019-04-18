@@ -10,7 +10,7 @@
       <li>three</li>
       <li>four</li>
     </ul>-->
-    <vue-content-loading
+    <!-- <vue-content-loading
             :height="600"
             :width="400"
             :speed="2"
@@ -33,7 +33,7 @@
       <rect x="178.5" y="234.8" rx="0" ry="0" width="48" height="18" />
       <rect x="260.5" y="233.8" rx="0" ry="0" width="48" height="18" />
       <rect x="340.5" y="235.8" rx="0" ry="0" width="48" height="18" />
-    </vue-content-loading>
+    </vue-content-loading> -->
       <Login></Login>
 
   </div>
