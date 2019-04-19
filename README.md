@@ -15,6 +15,12 @@ npm run serve
 npm run build
 ```
 
+### 本地访问 build 下内容
+```
+npm install -g serve
+cd dist => serve
+```
+
 ### Run your tests
 ```
 npm run test

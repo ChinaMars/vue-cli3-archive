@@ -17,7 +17,8 @@
     "vue": "^2.6.6",
     "vue-content-loading": "^1.6.0",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",

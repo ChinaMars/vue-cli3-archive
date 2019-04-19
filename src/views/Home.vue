@@ -41,16 +41,14 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
-import VueContentLoading from 'vue-content-loading';
+//import VueContentLoading from 'vue-content-loading';
 import Login from '@/components/login/Login.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld,
-    VueContentLoading,
-    Login,
+    //VueContentLoading,
+    Login
   }
 }
 </script>
