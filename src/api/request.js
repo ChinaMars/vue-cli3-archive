@@ -1,9 +1,10 @@
 import 'whatwg-fetch' ;
 import 'es6-promise'
-import STRING from '../assets/strings'
+
 
 
 const checkStatus = (response) => {
+    console.warn(response);
     if(response.status>=200&&response.status<=300){
         return response
     }
@@ -13,7 +14,7 @@ const checkStatus = (response) => {
 };
 
 const parseJson = (response) => {
-    return response.json(STRING.request_err_msg)
+    return response.json()
 };
 
 export default (url,options) => {

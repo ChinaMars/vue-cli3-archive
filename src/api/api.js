@@ -1,11 +1,11 @@
 import request from './request'
-
+import STRING from '../assets/strings'
 const method = {get: 'GET', post: 'POST'};
 const headers = { 'Accept': 'application/json, text/plain, */*' }
 const apiRequest = (url,option) => {
     return request(url,option).then(({data,err}) =>{
         if(err){
-            alert()
+            alert(STRING.request_err_msg)
             return {data,err}
         }
         const isSuccess = data.status;
