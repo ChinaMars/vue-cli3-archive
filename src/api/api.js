@@ -24,5 +24,14 @@ export default {
                 method: method.get,
             }
         )
+    },
+    fetchRegister(req){
+        return apiRequest(
+            `/register`,{
+                headers,
+                method: method.post,
+                body: JSON.stringify(req),
+            }
+        )
     }
 }

@@ -16,7 +16,6 @@ module.exports = {
     port: 10000,
     setup: function (app, server) {
       app.get('/login', function (req, res) {
-        console.log('get')
         let user = req.query['user'];
         let pass = req.query['pass'];
         if (!USER[user]) {
@@ -29,6 +28,10 @@ module.exports = {
           }
         }
 
+        res.end()
+      });
+      app.post('/register', function (req, res) {
+        res.send({ 'status': true })
         res.end()
       });
     }
