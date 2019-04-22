@@ -25,6 +25,7 @@
       <div class="password-list"><input type="text" name="" value="" :placeholder="STRINGS.login_psw_placeholder"></div>
     </div>
     <div><a href="index.html" class="main-btn">登录</a></div>
+      <van-button plain type="danger">默认按钮</van-button>
   </div>
 </div>
 </template>
@@ -33,9 +34,11 @@
 
 
 <script>
-import STRINGS from '../../assets/strings'
-import {fetchLogin,fetchRegister} from "../../api/api";
-
+  import Vue from 'vue'
+  import {fetchLogin,fetchRegister} from "../../api/api";
+  import { Button } from 'vant';
+  import STRINGS from '../../assets/strings'
+Vue.use(Button);
 export default {
   name: "Login",
   data() {
