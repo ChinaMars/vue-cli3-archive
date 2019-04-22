@@ -1,27 +1,49 @@
 <template>
-  <div>
-    <h1>{{title}}</h1>
-    <label>姓名</label>
-    <input v-model="name">
-    <label>密码</label>
-    <input v-model="pas">
-    <button @click="this.submit">提交</button>
-    <button @click="this.register">注册</button>
+ <div class="box flex-col bg_white login-list">
+  <!-- <div class="login-bg"></div>
+
+  <div class="login-tab flex-row">
+    <div class="tac item-1 login-list-tab1 on">会员登录</div>
+    <div class="tac item-1 login-list-tab2">代理人登录</div>
+  </div> -->
+  <div class="flex justify-end">
+    <div >
+      {{STRINGS.login_manger_enter}}
+    </div>
   </div>
+   <div class="flex black login-title ">
+    <span>
+      {{STRINGS.login_title}}
+    </span>
+    <span class="login-manger" v-show='status'>
+      {{STRINGS.login_manger}}
+      </span>
+  </div>
+  <div class="">
+    <div class="login-list1">
+      <div class="phone-list flex-row"><input type="text" name="" class="item-1" value="" maxlength="11" :placeholder="STRINGS.login_tel_placeholder"></div>
+      <div class="password-list"><input type="text" name="" value="" :placeholder="STRINGS.login_psw_placeholder"></div>
+    </div>
+    <div><a href="index.html" class="main-btn">登录</a></div>
+  </div>
+</div>
 </template>
 
 
 
 
 <script>
+import STRINGS from '../../assets/strings'
 import {fetchLogin,fetchRegister} from "../../api/api";
 
 export default {
   name: "Login",
   data() {
     return {
+      status: false,
       name: "",
-      pas: ""
+      pas: "",
+      STRINGS,  
     };
   },
 
