@@ -1,16 +1,17 @@
-import request from '../api/request'
+import fetch from './fetch'
+import STRING from '../assets/strings'
 
 
 export default async(url,option) => {
-  return request(url,option).then(({data,err}) =>{
+  return fetch(url,option).then(({data,err}) =>{
     if(err){
-      alert()
+      alert(STRING.request_err_msg)
       return {data,err}
     }
     const isSuccess = data.status;
     if(!isSuccess){
       alert(data.msg)
     }
-    return {...data,isSuccess}
+    return {...data}
   })
 };

@@ -1,6 +1,6 @@
 import 'whatwg-fetch' ;
 import 'es6-promise'
-
+const headers = { 'Accept': 'application/json, text/plain, */*' }
 
 
 const checkStatus = (response) => {
@@ -18,7 +18,7 @@ const parseJson = (response) => {
 };
 
 export default (url,options) => {
-    return fetch(url,options)
+    return fetch(url,Object.assign(options,headers))
         .then(checkStatus)
         .then(parseJson)
         .then((data) => ({data}))

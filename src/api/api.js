@@ -1,37 +1,15 @@
-import request from './request'
-import STRING from '../assets/strings'
+import request from '../utils/request'
 const method = {get: 'GET', post: 'POST'};
-const headers = { 'Accept': 'application/json, text/plain, */*' }
-const apiRequest = (url,option) => {
-    return request(url,option).then(({data,err}) =>{
-        if(err){
-            alert(STRING.request_err_msg)
-            return {data,err}
-        }
-        const isSuccess = data.status;
-        if(!isSuccess){
-            alert(data.msg)
-        }
-        return {...data,isSuccess}
-    })
-};
 
-export default {
-    fetchLogin({name,pas}){
-        return apiRequest(
-            `/login?user=${name}&pass=${pas}`,{
-                headers,
-                method: method.get,
-            }
-        )
-    },
-    fetchRegister(req){
-        return apiRequest(
-            `/register`,{
-                headers,
-                method: method.post,
-                body: JSON.stringify(req),
-            }
-        )
-    }
-}
+export const fetchLogin = ({name,pas}) => request(
+  `/login?user=${name}&pass=${pas}`,{
+    method: method.get,
+  }
+)
+
+export const fetchRegister = (req) => request(
+  `/register`,{
+    method: method.post,
+    body: JSON.stringify(req),
+  }
+)
