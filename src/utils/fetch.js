@@ -4,7 +4,6 @@ const headers = { 'Accept': 'application/json, text/plain, */*' }
 
 
 const checkStatus = (response) => {
-    console.warn(response);
     if(response.status>=200&&response.status<=300){
         return response
     }

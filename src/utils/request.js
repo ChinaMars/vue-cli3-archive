@@ -1,9 +1,9 @@
 import fetch from './fetch'
 import STRING from '../assets/strings'
+const baseUrl = 'https://www.easy-mock.com/mock/5cb593969f7c1a66a356c6ee/vue-archive'
 
-
-export default async(url,option) => {
-  return fetch(url,option).then(({data,err}) =>{
+export default (url,option) => {
+  return fetch(baseUrl+url,option).then(({data,err}) =>{
     if(err){
       alert(STRING.request_err_msg)
       return {data,err}

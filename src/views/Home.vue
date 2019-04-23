@@ -10,7 +10,13 @@
       <li>three</li>
       <li>four</li>
     </ul>-->
-    <!-- <vue-content-loading
+      <van-swipe :autoplay="3000" indicator-color="white">
+          <van-swipe-item>1</van-swipe-item>
+          <van-swipe-item>2</van-swipe-item>
+          <van-swipe-item>3</van-swipe-item>
+          <van-swipe-item>4</van-swipe-item>
+      </van-swipe>
+     <vue-content-loading
             :height="600"
             :width="400"
             :speed="2"
@@ -33,22 +39,34 @@
       <rect x="178.5" y="234.8" rx="0" ry="0" width="48" height="18" />
       <rect x="260.5" y="233.8" rx="0" ry="0" width="48" height="18" />
       <rect x="340.5" y="235.8" rx="0" ry="0" width="48" height="18" />
-    </vue-content-loading> -->
-      <Login></Login>
-
+    </vue-content-loading>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-//import VueContentLoading from 'vue-content-loading';
-import Login from '@/components/login/Login.vue'
-
+import Vue from 'vue'
+import VueContentLoading from 'vue-content-loading'
+import { Swipe, SwipeItem } from 'vant'
+import {home} from '../api/api'
+Vue.use(Swipe).use(SwipeItem);
 export default {
   name: 'home',
+  data() {
+    return{
+        banner: []
+    }
+  },
+  mounted() {
+    home().then(res =>{
+      window.console.log(res)
+    })
+  },
   components: {
-    //VueContentLoading,
-    Login
+    VueContentLoading
+  },
+  methods: {
+
   }
 }
 </script>

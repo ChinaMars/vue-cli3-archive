@@ -1,6 +1,12 @@
 import request from '../utils/request'
 const method = {get: 'GET', post: 'POST'};
 
+export const home = () => request(
+  `/home`,{
+    method: method.post,
+  }
+)
+
 export const fetchLogin = ({name,pas}) => request(
   `/login?user=${name}&pass=${pas}`,{
     method: method.get,
