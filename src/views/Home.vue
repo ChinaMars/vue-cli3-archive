@@ -9,20 +9,20 @@
                       primaryColor="#f3f3f3"
                       secondaryColor="#ecebeb"
               >
-                  <rect x="10" y="20" rx="5" ry="5" width="380" height="162.5" />
-                  <circle cx="35.85555841571826" cy="211.15555841571828" r="19.855558415718257" />
-                  <circle cx="119.85555841571826" cy="211.15555841571828" r="19.855558415718257" />
-                  <circle cx="200.85555841571826" cy="210.15555841571828" r="19.855558415718257" />
-                  <circle cx="284.85555841571824" cy="209.15555841571828" r="19.855558415718257" />
-                  <circle cx="362.85555841571824" cy="207.15555841571828" r="19.855558415718257" />
-                  <rect x="12.5" y="236.8" rx="0" ry="0" width="48" height="18" />
-                  <rect x="95.5" y="234.8" rx="0" ry="0" width="48" height="18" />
-                  <rect x="178.5" y="234.8" rx="0" ry="0" width="48" height="18" />
-                  <rect x="260.5" y="233.8" rx="0" ry="0" width="48" height="18" />
-                  <rect x="340.5" y="235.8" rx="0" ry="0" width="48" height="18" />
-                  <rect x="12.51" y="285.78" rx="0" ry="0" width="118.27" height="67.45" />
-                  <rect x="141.51" y="285.78" rx="0" ry="0" width="118.27" height="67.45" />
-                  <rect x="270.51" y="284.78" rx="0" ry="0" width="118.27" height="67.45" />
+                  <rect x="0" y="0" rx="5" ry="5" width="400" height="162.5" />
+                  <circle cx="30" cy="210" r="19.855558415718257" />
+                  <rect x="2" y="236" rx="0" ry="0" width="60" height="18" />
+                  <circle cx="115" cy="210" r="19.855558415718257" />
+                  <rect x="85" y="236" rx="0" ry="0" width="60" height="18" />
+                  <circle cx="195" cy="210" r="19.855558415718257" />
+                  <rect x="166" y="236" rx="0" ry="0" width="60" height="18" />
+                  <circle cx="280" cy="210" r="19.855558415718257" />
+                  <rect x="250" y="236" rx="0" ry="0" width="60" height="18" />
+                  <circle cx="370" cy="210" r="19.855558415718257" />
+                  <rect x="338" y="236" rx="0" ry="0" width="60" height="18" />
+                  <rect x="0" y="285.78" rx="0" ry="0" width="130" height="67.45" />
+                  <rect x="140" y="285.78" rx="0" ry="0" width="130" height="67.45" />
+                  <rect x="280" y="284.78" rx="0" ry="0" width="130" height="67.45" />
               </vue-content-loading>
           </div>
        <div v-else="" key="home">
@@ -77,6 +77,9 @@ export default {
 </script>
 
 <style lang="less">
+    .home{
+        padding: 40px 20px 0 20px;
+    }
     .van-swipe{
         img.ignore{
             width: 100%;
