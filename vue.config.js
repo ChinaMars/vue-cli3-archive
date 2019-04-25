@@ -1,6 +1,14 @@
 module.exports = {
   css: {
-    loaderOptions: {}, // css预处理器
-    modules: true // css module 是否开启
+    loaderOptions: {
+      less: {
+        modifyVars: {
+          red: '#03a9f4',
+          blue: '#3eaf7c',
+          orange: '#f08d49',
+          'text-color': '#111'
+        }
+      }
+    }
   }
-}
+};
