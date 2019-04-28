@@ -5,8 +5,8 @@
 </template>
 
 <style lang="scss">
-  @import "./style/common/reset.less";
-  @import "./style/common/variables.less";
+  @import "./style/common/reset.scss";
+  @import "./style/common/variables.scss";
   @import './style/home.css';
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
