@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "start": "npm run serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "svg": "vsvg -s ./src/icons/svg -t ./src/icons/components --ext ts --es6"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -32,6 +33,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
+    "vue-svgicon": "^3.2.6",
     "vue-template-compiler": "^2.5.21"
   },
   "eslintConfig": {
