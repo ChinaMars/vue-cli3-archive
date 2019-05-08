@@ -1,3 +1,5 @@
+const is_pro = process.env.NODE_ENV
+
 module.exports = {
   css: {
     loaderOptions: {

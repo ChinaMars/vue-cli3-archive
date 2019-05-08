@@ -36,6 +36,9 @@
                     <span v-for="(menuName,indexMenuName) in menu" :key="indexMenuName">{{menuName}}</span>
                 </van-swipe-item>
             </van-swipe>
+            <svgicon
+                    name="home"
+            ></svgicon>
         </div>
     </transition>
       <!--    <img alt="Vue logo" src="../assets/logo.png">

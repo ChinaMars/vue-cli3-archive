@@ -1,6 +1,6 @@
 import fetch from './fetch'
 import STRING from '../assets/strings'
-const baseUrl = 'https://www.easy-mock.com/mock/5cb593969f7c1a66a356c6ee/vue-archive'
+const baseUrl = process.env.VUE_APP_BASE_API
 
 export default (url,option) => {
   return fetch(baseUrl+url,option).then(({data,err}) =>{
