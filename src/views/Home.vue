@@ -36,9 +36,7 @@
                     <span v-for="(menuName,indexMenuName) in menu" :key="indexMenuName">{{menuName}}</span>
                 </van-swipe-item>
             </van-swipe>
-            <svgicon
-                    name="home"
-            ></svgicon>
+            <Menu></Menu>
         </div>
     </transition>
       <!--    <img alt="Vue logo" src="../assets/logo.png">
@@ -60,12 +58,13 @@ import VueContentLoading from 'vue-content-loading'
 import { Swipe, SwipeItem } from 'vant'
 import { home } from '../api/api'
 import mixin from '../utils/mixin'
-//Vue.use(Swipe).use(SwipeItem);
+import Menu from '@/components/footer/menu.vue'
 
 export default {
   name: 'home',
   mixins: [mixin],
   components: {
+    Menu,
     [Swipe.name]: Swipe,
     [SwipeItem.name]: SwipeItem,
     VueContentLoading

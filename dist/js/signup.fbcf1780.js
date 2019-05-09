@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["signup"],{"5c9c":function(n,e,t){"use strict";t.r(e);var c=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",[n._v("培训报名")])},i=[],s={name:"SignUp"},u=s,a=t("2877"),p=Object(a["a"])(u,c,i,!1,null,"4e42b376",null);e["default"]=p.exports}}]);
+//# sourceMappingURL=signup.fbcf1780.js.map

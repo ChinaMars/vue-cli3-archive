@@ -9,15 +9,25 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      menu: true,
+      mate:{
+        title: '首页',
+        icon: 'home'
+      }
     },
-/*    {
-      path: '/about',
-      name: 'about',
+    {
+      path: '/signup',
+      name: 'signup',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/!* webpackChunkName: "about" *!/ '../views/About.vue')
-    }*/
+      component: () => import(/* webpackChunkName: "signup" */ '../views/SignUp.vue'),
+      menu: true,
+      mate:{
+        title: '培训报名',
+        icon: 'home'
+      }
+    }
   ]
 })

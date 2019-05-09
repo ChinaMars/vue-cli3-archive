@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "start": "npm run serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "svg": "vsvg -s ./src/icons/svg -t ./src/icons/components --ext ts --es6"
@@ -12,6 +11,7 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "cssnano": "^4.1.10",
+    "lodash": "^4.17.11",
     "postcss-aspect-ratio-mini": "^1.0.1",
     "postcss-px-to-viewport": "^1.1.0",
     "vant": "^1.6.15",
