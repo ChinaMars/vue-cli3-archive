@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <transition name="fade" mode="out-in">
-        <div v-if="loading" key="loading">
+        <section class="inner" v-if="loading" key="loading">
           <vue-content-loading
               :height="600"
               :width="400"
@@ -24,8 +24,8 @@
               <rect x="140" y="285.78" rx="0" ry="0" width="130" height="67.45" />
               <rect x="280" y="284.78" rx="0" ry="0" width="130" height="67.45" />
           </vue-content-loading>
-        </div>
-        <div v-else="" key="page">
+        </section>
+        <section class="inner" v-else key="page">
             <van-swipe :autoplay="3000" indicator-color="white" :height="160">
               <van-swipe-item v-for="(image,index) in homeData.banner" :key="index">
                   <img class="ignore" :src="image" v-lazy="image"/>
@@ -36,9 +36,9 @@
                     <span v-for="(menuName,indexMenuName) in menu" :key="indexMenuName">{{menuName}}</span>
                 </van-swipe-item>
             </van-swipe>
-            <Menu></Menu>
-        </div>
+        </section>
     </transition>
+      <Menu></Menu>
       <!--    <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <ul :class="$style.red">
@@ -85,9 +85,6 @@ export default {
 </script>
 
 <style lang="less">
-    .home{
-        padding: 40px 20px 0 20px;
-    }
     .van-swipe{
         img.ignore{
             width: 100%;

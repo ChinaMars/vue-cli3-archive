@@ -1,12 +1,14 @@
 <template>
-    <section class="menu">
-        <div v-for="item in menu" :key="item.name">
+    <section class="menu" id="menu">
+        <router-link v-for="item in menu" :key="item.name" :to="item.path">
             <svgicon
-                    :name="item.name"
-                    color="#FF0000"
+                    :name="item.mate.icon"
+                    :style="{color: item.path == $route.path ? '#ff6500' : '#2c2c2c'}"
+                    width="25"
+                    height="25"
             ></svgicon>
-            {{item.name}}
-        </div>
+            <span>{{item.mate.title}}</span>
+        </router-link>
     </section>
 </template>
 
@@ -16,13 +18,15 @@ import _ from 'lodash'
 export default {
     data() {
       return{
-
+        change: false
       }
     },
     mounted() {
 
     },
-    methods: {},
+    methods: {
+
+    },
     computed: {
       menu() {
         let routes = _.map(this.$router.options.routes,(o)=>{
@@ -36,5 +40,23 @@ export default {
 </script>
 
 <style lang="less">
-
+    #menu{
+        width: 100%;
+        border-top: 1px solid #e1e1e1;
+        position: fixed;
+        bottom: 0;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+            flex: 1;
+            span{
+                display: block;
+            }
+        }
+        .svg-icon{
+            width: 200px;
+        }
+    }
 </style>

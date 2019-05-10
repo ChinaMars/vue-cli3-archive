@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "cssnano": "^4.1.10",
     "lodash": "^4.17.11",
     "postcss-aspect-ratio-mini": "^1.0.1",
     "postcss-px-to-viewport": "^1.1.0",

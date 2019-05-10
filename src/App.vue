@@ -12,6 +12,9 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+    .inner{
+      padding: 40px 20px 0 20px;
+    }
   }
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s .5s;
