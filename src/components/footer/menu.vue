@@ -1,29 +1,36 @@
 <template>
     <section class="menu">
-        底部菜单
-        <svgicon
-            name="home"
-            color="#FF0000"
-        ></svgicon>
+        <div v-for="item in menu" :key="item.name">
+            <svgicon
+                    :name="item.name"
+                    color="#FF0000"
+            ></svgicon>
+            {{item.name}}
+        </div>
     </section>
 </template>
 
 <script>
 import _ from 'lodash'
+
 export default {
     data() {
       return{
-        menu: {}
+
       }
     },
     mounted() {
-      console.log(this.$router)
-      let a = [1,2,3];
-      let b = [2,3,4];
-      console.log(_.difference(a,b))
-    },
-    methods: {
 
+    },
+    methods: {},
+    computed: {
+      menu() {
+        let routes = _.map(this.$router.options.routes,(o)=>{
+          if (o.menu) return o
+        })
+        routes = _.without(routes, undefined)
+        return routes
+      }
     }
 }
 </script>

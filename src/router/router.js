@@ -28,6 +28,18 @@ export default new Router({
         title: '培训报名',
         icon: 'home'
       }
+    },
+    {
+      path: '/login',
+      name: 'logiin',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "login" */ '../views/login.vue'),
+      mate:{
+        title: '登录',
+        icon: 'login'
+      }
     }
   ]
 })
