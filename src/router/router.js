@@ -26,7 +26,7 @@ export default new Router({
       menu: true,
       mate:{
         title: '培训报名',
-        icon: 'home'
+        icon: 'signup'
       }
     },
     {
