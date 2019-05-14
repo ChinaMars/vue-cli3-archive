@@ -3,7 +3,7 @@
         <router-link v-for="item in menu" :key="item.name" :to="item.path">
             <svgicon
                     :name="item.mate.icon"
-                    :style="{color: item.path == $route.path ? '#ff6500' : '#2c2c2c'}"
+                    :class="{orange: item.path == $route.path}"
                     width="25"
                     height="25"
             ></svgicon>
@@ -53,6 +53,9 @@ export default {
             flex: 1;
             span{
                 display: block;
+            }
+            &.router-link-exact-active{
+                color: @orange;
             }
         }
         .svg-icon{

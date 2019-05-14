@@ -15,7 +15,7 @@ module.exports = {
         modifyVars: {
           red: '#03a9f4',
           blue: '#3eaf7c',
-          orange: '#f08d49',
+          orange: '#ff6600',
           'text-color': '#111'
         }
       }

@@ -38,7 +38,7 @@
             </van-swipe>
         </section>
     </transition>
-      <Menu></Menu>
+    <Menu></Menu>
       <!--    <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <ul :class="$style.red">
