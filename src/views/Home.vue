@@ -58,7 +58,8 @@ import VueContentLoading from 'vue-content-loading'
 import { Swipe, SwipeItem } from 'vant'
 import { home } from '../api/api'
 import mixin from '../utils/mixin'
-import Menu from '@/components/footer/menu.vue'
+import { mapState } from 'vuex'
+import Menu from '@/components/footer/Menu.vue'
 
 export default {
   name: 'home',
@@ -71,7 +72,7 @@ export default {
   },
   data() {
     return{
-      homeData: {},
+      homeData: {}
     }
   },
   mounted() {
@@ -79,8 +80,16 @@ export default {
       this.homeData = res.data
       this.loading = false
     })
+    console.log(this.direction)
   },
-  methods: {}
+  methods: {
+
+  },
+  computed: {
+    ...mapState([
+      'direction'
+    ])
+  }
 }
 </script>
 

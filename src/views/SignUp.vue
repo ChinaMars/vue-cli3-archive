@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import Menu from '@/components/footer/menu.vue'
+  import Menu from '@/components/footer/Menu.vue'
 
   export default {
     name: 'SignUp',
