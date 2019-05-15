@@ -5,7 +5,9 @@ import store from './store/index'
 import './icons'
 import { Lazyload } from 'vant'
 
-Vue.use(Lazyload)
+Vue.use(Lazyload,{
+  loading: require('./assets/lazy_img.gif')
+})
 
 Vue.config.productionTip = false
 

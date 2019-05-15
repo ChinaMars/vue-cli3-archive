@@ -26,7 +26,7 @@
           </vue-content-loading>
         </section>
         <section class="inner" v-else key="page">
-            <van-swipe :autoplay="3000" indicator-color="white" :height="160">
+            <van-swipe :autoplay="300000" indicator-color="white" :height="160">
               <van-swipe-item v-for="(image,index) in homeData.banner" :key="index">
                   <img class="ignore" :src="image" v-lazy="image"/>
               </van-swipe-item>
@@ -97,6 +97,7 @@ export default {
     .van-swipe{
         img.ignore{
             width: 100%;
+            max-width: 100%;
             height: 160px;
         }
     }

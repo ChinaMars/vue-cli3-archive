@@ -16,7 +16,7 @@
     text-align: center;
     color: #2c3e50;
     .inner{
-      padding: 40px 20px 0 20px;
+      padding: 40px 19px 0 19px;
     }
   }
 </style>
