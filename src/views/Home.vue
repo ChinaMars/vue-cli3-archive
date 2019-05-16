@@ -57,13 +57,13 @@
 import VueContentLoading from 'vue-content-loading'
 import { Swipe, SwipeItem } from 'vant'
 import { home } from '../api/api'
-import mixin from '../utils/mixin'
+import common from '@/mixins/common'
 import { mapState } from 'vuex'
 import Menu from '@/components/footer/Menu.vue'
 
 export default {
   name: 'home',
-  mixins: [mixin],
+  mixins: [common],
   components: {
     Menu,
     [Swipe.name]: Swipe,

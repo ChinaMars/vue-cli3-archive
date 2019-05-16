@@ -5,5 +5,4 @@ export default{
     login_manger: '管理员',
     login_tel_placeholder: '请输入手机号',
     login_psw_placeholder: '请输入密码',
-
 }

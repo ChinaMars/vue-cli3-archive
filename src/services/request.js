@@ -1,5 +1,5 @@
 import fetch from './fetch'
-import STRING from '../assets/strings'
+import STRING from '@/assets/strings'
 const baseUrl = process.env.VUE_APP_BASE_API
 
 export default (url,option) => {

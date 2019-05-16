@@ -6,7 +6,7 @@ import './icons'
 import { Lazyload } from 'vant'
 
 Vue.use(Lazyload,{
-  loading: require('./assets/lazy_img.gif')
+  loading: require('./assets/images/lazy_img.gif')
 })
 
 Vue.config.productionTip = false
