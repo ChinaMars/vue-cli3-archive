@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    direction: 'enter'
+    direction: 'slide-right'
   },
   mutations: {
     updateDirection(state, payload) {

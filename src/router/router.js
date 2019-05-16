@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import store from '@/store/index'
 import Home from '@/views/Home.vue'
+import { objectKeyValues } from '@/utils/myUtils'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
+  console.log(to)
+  const routes = router.options.routes
+  const routesName = objectKeyValues(routes,'name')
+
+  console.log(routesName)
   store.commit('updateDirection',{direction: 'back'})
   next()
 })

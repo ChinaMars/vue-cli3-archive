@@ -58,7 +58,6 @@ import VueContentLoading from 'vue-content-loading'
 import { Swipe, SwipeItem } from 'vant'
 import { home } from '../api/api'
 import common from '@/mixins/common'
-import { mapState } from 'vuex'
 import Menu from '@/components/footer/Menu.vue'
 
 export default {
@@ -80,15 +79,12 @@ export default {
       this.homeData = res.data
       this.loading = false
     })
-    console.log(this.direction)
   },
   methods: {
 
   },
   computed: {
-    ...mapState([
-      'direction'
-    ])
+
   }
 }
 </script>

@@ -1,8 +1,23 @@
 <template>
   <div id="app">
-    <router-view/>
+    <transition :name="direction">
+      <router-view/>
+    </transition>
   </div>
 </template>
+
+<script>
+  import { mapState } from 'vuex'
+
+  export default {
+    name: 'app',
+    computed: {
+      ...mapState([
+        'direction'
+      ])
+    }
+  }
+</script>
 
 <style lang="less">
   @import (less) "~normalize.css";

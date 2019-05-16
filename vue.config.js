@@ -3,6 +3,7 @@ const isAnalyz = process.env.VUE_APP_IS_ANALYZ === 'analyz'
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
+  publicPath: './',
   chainWebpack: config => {
     if(isAnalyz){
       config.plugin('webpack-bundle-analyzer')
