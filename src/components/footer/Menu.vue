@@ -42,6 +42,7 @@ export default {
 <style lang="less">
     #menu{
         width: 100%;
+        background: #FFFFFF;
         border-top: 1px solid #e1e1e1;
         position: fixed;
         bottom: 0;
@@ -50,6 +51,7 @@ export default {
         justify-content: center;
         align-items: center;
         a{
+            text-align: center;
             flex: 1;
             span{
                 display: block;

@@ -47,12 +47,20 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  console.log(to)
   const routes = router.options.routes
   const routesName = objectKeyValues(routes,'name')
-
-  console.log(routesName)
-  store.commit('updateDirection',{direction: 'back'})
+  const toIndex = routesName.indexOf(to.name)
+  const fromIndex = routesName.indexOf(from.name)
+  let direction = 'slide-right'
+  if (toIndex > -1 && fromIndex > -1) {
+    if (toIndex < fromIndex) {
+      direction = 'slide-right'
+    } else {
+      direction = 'slide-left'
+    }
+  }
+  console.log(direction)
+  store.commit('updateDirection',{ direction: direction })
   next()
 })
 

@@ -38,7 +38,6 @@
             </van-swipe>
         </section>
     </transition>
-    <Menu></Menu>
       <!--    <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <ul :class="$style.red">
@@ -58,13 +57,11 @@ import VueContentLoading from 'vue-content-loading'
 import { Swipe, SwipeItem } from 'vant'
 import { home } from '../api/api'
 import common from '@/mixins/common'
-import Menu from '@/components/footer/Menu.vue'
 
 export default {
   name: 'home',
   mixins: [common],
   components: {
-    Menu,
     [Swipe.name]: Swipe,
     [SwipeItem.name]: SwipeItem,
     VueContentLoading
@@ -90,6 +87,9 @@ export default {
 </script>
 
 <style lang="less">
+    .home{
+        background: blue;
+    }
     .van-swipe{
         img.ignore{
             width: 100%;

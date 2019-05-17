@@ -1,16 +1,21 @@
 <template>
   <div id="app">
     <transition :name="direction">
-      <router-view/>
+      <router-view class="container"></router-view>
     </transition>
+    <Menu></Menu>
   </div>
 </template>
 
 <script>
   import { mapState } from 'vuex'
+  import Menu from '@/components/footer/Menu.vue'
 
   export default {
     name: 'app',
+    components: {
+      Menu
+    },
     computed: {
       ...mapState([
         'direction'
@@ -25,11 +30,15 @@
   @import "~@/style/variables.less";
   @import "~@/style/common.less";
   #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
+    .container{
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #c8c7c7;
+      overflow: auto;
+    }
     .inner{
       padding: 40px 19px 0 19px;
     }

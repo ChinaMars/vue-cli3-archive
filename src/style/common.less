@@ -25,9 +25,27 @@
   height: 100%;
 }
 // page enter or leave animate
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s .5s;
+.slide-left-enter {
+  transform: translate3d(200%, 0, 0);
+  z-index: 99;
 }
-.fade-enter, .fade-leave-to{
-  opacity: 0;
+.slide-left-leave-to {
+  z-index: 99;
+}
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition: transform 1.4s ease;
+  z-index: 99;
+}
+.slide-right-enter {
+}
+.slide-right-leave-to {
+  transform: translate3d(100%, 0, 0);
+}
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: transform 1.4s ease;
+}
+.slide-right-leave-active,.slide-left-enter-active{
+  z-index: 99;
 }

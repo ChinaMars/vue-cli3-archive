@@ -1,21 +1,19 @@
 <template>
-    <div>
-        培训报名
-        <Menu></Menu>
+    <div class="sign-up">
+        <div>培训报名</div>
     </div>
 </template>
 
 <script>
-  import Menu from '@/components/footer/Menu.vue'
-
   export default {
     name: 'SignUp',
     components: {
-      Menu
     }
   }
 </script>
 
-<style scoped>
+<style lang="less">
+    .sign-up{
 
+    }
 </style>
