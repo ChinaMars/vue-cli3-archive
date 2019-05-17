@@ -3,18 +3,16 @@
     <transition :name="direction">
       <router-view class="container"></router-view>
     </transition>
-    <Menu></Menu>
   </div>
 </template>
 
 <script>
   import { mapState } from 'vuex'
-  import Menu from '@/components/footer/Menu.vue'
 
   export default {
     name: 'app',
     components: {
-      Menu
+
     },
     computed: {
       ...mapState([

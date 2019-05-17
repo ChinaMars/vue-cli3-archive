@@ -51,7 +51,7 @@ router.beforeEach((to, from, next) => {
   const routesName = objectKeyValues(routes,'name')
   const toIndex = routesName.indexOf(to.name)
   const fromIndex = routesName.indexOf(from.name)
-  let direction = 'slide-right'
+  let direction = ''
   if (toIndex > -1 && fromIndex > -1) {
     if (toIndex < fromIndex) {
       direction = 'slide-right'
