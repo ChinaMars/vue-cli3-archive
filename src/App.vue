@@ -15,9 +15,9 @@
 
     },
     computed: {
-      ...mapState([
-        'direction'
-      ])
+      ...mapState({
+        direction: 'direction'
+      })
     }
   }
 </script>
@@ -34,7 +34,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: #c8c7c7;
+      background: #FFFFFF;
       overflow: auto;
     }
     .inner{

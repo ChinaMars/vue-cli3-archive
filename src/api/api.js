@@ -1,4 +1,4 @@
-import request from '@/services/request'
+import request from '@/utils/services/request'
 const method = {get: 'GET', post: 'POST'};
 
 export const home = () => request(

@@ -36,6 +36,7 @@
                     <span v-for="(menuName,indexMenuName) in menu" :key="indexMenuName">{{menuName}}</span>
                 </van-swipe-item>
             </van-swipe>
+            <router-link to="/login">Go to login</router-link>
         </section>
     </transition>
     <Menu></Menu>
@@ -90,9 +91,6 @@ export default {
 </script>
 
 <style lang="less">
-    .home{
-        background: blue;
-    }
     .van-swipe{
         img.ignore{
             width: 100%;

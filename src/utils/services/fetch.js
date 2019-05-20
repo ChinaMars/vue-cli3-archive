@@ -1,4 +1,4 @@
-import 'whatwg-fetch' ;
+import 'whatwg-fetch'
 import 'es6-promise'
 const headers = { 'Accept': 'application/json, text/plain, */*' }
 

@@ -24,7 +24,14 @@
   width: 100%;
   height: 100%;
 }
-// page enter or leave animate
+// page enter or leave fadein animate
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s .5s;
+}
+.fade-enter, .fade-leave-to{
+  opacity: 0;
+}
+// page enter or leave slide animate
 @transition-time: 350ms;
 .slide-right-enter-active,
 .slide-right-leave-active,
@@ -40,25 +47,25 @@
 }
 .slide-right-enter {
   opacity: 0.75;
-  transform: translate3d(-35%, 0, 0)!important;
+  transform: translate3d(-35%, 0, 0) !important;
 }
 .slide-right-enter-active {
-  z-index: -1!important;
+  z-index: -1 !important;
   transition: all @transition-time;
 }
 .slide-right-leave-active {
-  transform: translate3d(100%, 0, 0)!important;
+  transform: translate3d(100%, 0, 0) !important;
   transition: all @transition-time linear;
 }
 .slide-left-enter {
-  transform: translate3d(100%, 0, 0)!important;
+  transform: translate3d(100%, 0, 0) !important;
 }
 .slide-left-enter-active {
-  transition: all  @transition-time linear;
+  transition: all @transition-time linear;
 }
 .slide-left-leave-active {
   z-index: -1;
   opacity: 0.65;
-  transform: translate3d(-35%, 0, 0)!important;
+  transform: translate3d(-35%, 0, 0) !important;
   transition: all @transition-time linear;
 }
