@@ -7,6 +7,7 @@ import { objectKeyValue } from '@/utils/myUtils'
 Vue.use(Router)
 
 const router = new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
