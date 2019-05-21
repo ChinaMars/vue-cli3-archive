@@ -1,5 +1,24 @@
 # vue-archive
 
+## 线上网站访问链接：
+www.mars1992.cn
+
+## 参考了这些大神分享：
+[1.https://github.com/zhouyupeng/vue-cli3-H5](https://github.com/zhouyupeng/vue-cli3-H5)
+
+[2.https://github.com/cklwblove/vue-cli3-template](https://github.com/cklwblove/vue-cli3-template)
+
+[3.https://github.com/HaoChuan9421/vue-cli3-optimization](https://github.com/HaoChuan9421/vue-cli3-optimization)
+
+##网络请求使用了fetch:
+[https://github.com/github/fetch](https://github.com/github/fetch)
+后续可能会修改为：axios
+
+## 网站UI使用了有赞的：
+[https://github.com/youzan/vant](https://github.com/youzan/vant)
+
+## 持续更新中。。。。。。（如果这个项目对你有帮助，请动动你的小手点个star,你的star是我的动力！！）
+
 ## Project setup
 ```
 npm install
