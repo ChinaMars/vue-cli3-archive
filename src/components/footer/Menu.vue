@@ -33,7 +33,6 @@ export default {
           if (o.menu) return o
         })
         routes = _.without(routes, undefined)
-        console.log(routes)
         return routes
       }
     }

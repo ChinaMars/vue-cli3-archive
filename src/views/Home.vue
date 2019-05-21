@@ -33,16 +33,23 @@
             </van-swipe>
             <van-swipe indicator-color="#249ff6" :height="90" id="menu-list">
                 <van-swipe-item v-for="(menu,indexMenu) in homeData.menu" :key="indexMenu">
-                    <div class="col" v-for="(menuName,indexMenuName) in menu" :key="indexMenuName">
+                    <div class="col" v-for="(menuItem,indexMenuItem) in menu" :key="indexMenuItem">
                         <svgicon
-                            :name="menuName.icon"
+                            :name="menuItem.icon"
                             width="35"
                             height="35"
                         ></svgicon>
-                        <span>{{menuName.text}}</span>
+                        <span>{{menuItem.text}}</span>
                     </div>
                 </van-swipe-item>
             </van-swipe>
+            <van-tabs sticky>
+                <van-tab v-for="(tabs,indexTabs) in homeData.tabs" :title="tabs.title" :key="indexTabs">
+                    <div class="col" v-for="(item, indexTabsItem) in tabs.info" :key="indexTabsItem">
+                        <img class="ignore" :src="item.img" v-lazy="item.img"/>
+                    </div>
+                </van-tab>
+            </van-tabs>
             <router-link to="/login" id="router-link">点击领取</router-link>
         </section>
     </transition>
@@ -63,7 +70,7 @@
 <script>
 // @ is an alias to /src
 import VueContentLoading from 'vue-content-loading'
-import { Swipe, SwipeItem } from 'vant'
+import { Swipe, SwipeItem, Tabs, Tab } from 'vant'
 import { home } from '../api/api'
 import common from '@/mixins/common'
 import Menu from '@/components/footer/Menu.vue'
@@ -75,6 +82,8 @@ export default {
     Menu,
     [Swipe.name]: Swipe,
     [SwipeItem.name]: SwipeItem,
+    [Tab.name]: Tab,
+    [Tabs.name]: Tabs,
     VueContentLoading
   },
   data() {
