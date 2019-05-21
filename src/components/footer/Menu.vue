@@ -33,6 +33,7 @@ export default {
           if (o.menu) return o
         })
         routes = _.without(routes, undefined)
+        console.log(routes)
         return routes
       }
     }
@@ -55,6 +56,8 @@ export default {
             flex: 1;
             span{
                 display: block;
+                font-size: 16px;
+                padding-top: 8px;
             }
             &.router-link-exact-active{
                 color: @orange;

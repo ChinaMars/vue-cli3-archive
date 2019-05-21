@@ -36,7 +36,7 @@
                     <span v-for="(menuName,indexMenuName) in menu" :key="indexMenuName">{{menuName}}</span>
                 </van-swipe-item>
             </van-swipe>
-            <router-link to="/login">Go to login</router-link>
+            <router-link to="/login" id="router-link">点击领取</router-link>
         </section>
     </transition>
     <Menu></Menu>

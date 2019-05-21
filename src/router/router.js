@@ -32,16 +32,29 @@ const router = new Router({
       }
     },
     {
+      path: '/test',
+      name: 'test',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "test" */ '../views/Test.vue'),
+      menu: true,
+      mate:{
+        title: '模拟考试',
+        icon: 'test'
+      }
+    },
+    {
       path: '/login',
       name: 'login',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "login" */ '../views/login.vue'),
-      menu: false,
+      component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue'),
+      menu: true,
       mate:{
-        title: '登录',
-        icon: 'login'
+        title: '我的',
+        icon: 'account'
       }
     }
   ]
@@ -67,7 +80,7 @@ router.beforeEach((to, from, next) => {
       direction = 'fade'
     }
   }
-  store.dispatch('updateDirection',{ direction: direction })
+  store.dispatch('app/updateDirection',{ direction: direction })
   next()
 })
 

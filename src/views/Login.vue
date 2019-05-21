@@ -1,6 +1,6 @@
 <template>
-    <div class="sign-up">
-        <div>培训报名</div>
+    <div class="login">
+        <div>登录</div>
         <Menu></Menu>
     </div>
 </template>
@@ -9,13 +9,13 @@
   import Menu from '@/components/footer/Menu.vue'
 
   export default {
-    name: 'SignUp',
+    name: 'login',
     components: {
       Menu
     }
   }
 </script>
 
-<style scoped>
+<style lang="less">
 
 </style>

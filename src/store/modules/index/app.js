@@ -1,16 +1,20 @@
-export default {
+import * as type from './mutation-types'
+
+const app = {
   namespaced: true,
   state: {
     direction: ''
   },
   mutations: {
-    SET_DIRECTION(state, payload) {
+    [type.SET_DIRECTION] (state, payload) {
       state.direction = payload.direction
     }
   },
   actions: {
     updateDirection: ({commit}, payload) => {
-      commit('SET_DIRECTION',payload)
+      commit(type.SET_DIRECTION,payload)
     }
   }
 }
+
+export default app

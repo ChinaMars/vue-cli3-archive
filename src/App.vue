@@ -15,9 +15,7 @@
 
     },
     computed: {
-      ...mapState({
-        direction: 'direction'
-      })
+      ...mapState('app',['direction'])
     }
   }
 </script>

@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import SvgIcon from 'vue-svgicon'
 import './svg-icon.less'
-import './components/home'
-import './components/signup'
+import './components'
 
 Vue.use(SvgIcon, {
   tagName: 'svgicon',
