@@ -26,14 +26,21 @@
           </vue-content-loading>
         </section>
         <section class="inner" v-else key="page">
-            <van-swipe :autoplay="300000" indicator-color="white" :height="160">
+            <van-swipe :autoplay="3000" indicator-color="white" :height="160">
               <van-swipe-item v-for="(image,index) in homeData.banner" :key="index">
                   <img class="ignore" :src="image" v-lazy="image"/>
               </van-swipe-item>
             </van-swipe>
-            <van-swipe indicator-color="#249ff6" :height="90">
+            <van-swipe indicator-color="#249ff6" :height="90" id="menu-list">
                 <van-swipe-item v-for="(menu,indexMenu) in homeData.menu" :key="indexMenu">
-                    <span v-for="(menuName,indexMenuName) in menu" :key="indexMenuName">{{menuName}}</span>
+                    <div class="col" v-for="(menuName,indexMenuName) in menu" :key="indexMenuName">
+                        <svgicon
+                            :name="menuName.icon"
+                            width="35"
+                            height="35"
+                        ></svgicon>
+                        <span>{{menuName.text}}</span>
+                    </div>
                 </van-swipe-item>
             </van-swipe>
             <router-link to="/login" id="router-link">点击领取</router-link>
@@ -91,11 +98,20 @@ export default {
 </script>
 
 <style lang="less">
-    .van-swipe{
-        img.ignore{
-            width: 100%;
-            max-width: 100%;
-            height: 160px;
+    #menu-list{
+        margin-top: 50px;
+        .van-swipe-item{
+            display: flex;
+        }
+        .col{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            span{
+                padding-top: 20px;
+                font-size: 28px;
+            }
         }
     }
     [w-375-224]{

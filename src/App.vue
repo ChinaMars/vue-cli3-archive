@@ -32,7 +32,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: #FFFFFF;
+      background: #f8f8f8;
       overflow: auto;
     }
     .inner{

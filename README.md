@@ -10,7 +10,7 @@ www.mars1992.cn
 
 [3.https://github.com/HaoChuan9421/vue-cli3-optimization](https://github.com/HaoChuan9421/vue-cli3-optimization)
 
-##网络请求使用了fetch:
+## 网络请求使用了fetch:
 [https://github.com/github/fetch](https://github.com/github/fetch)
 后续可能会修改为：axios
 
