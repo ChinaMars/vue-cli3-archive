@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <transition :name="direction">
-      <router-view class="container"></router-view>
+      <router-view class="container" :class="{'hasMenu' : isMenu}"></router-view>
     </transition>
   </div>
 </template>
@@ -15,28 +15,14 @@
 
     },
     computed: {
-      ...mapState('app',['direction'])
+      ...mapState('app',['direction','isMenu'])
     }
   }
 </script>
 
 <style lang="less">
   @import (less) "~normalize.css";
-  @import "~@/style/reset.less";
   @import "~@/style/variables.less";
+  @import "~@/style/reset.less";
   @import "~@/style/common.less";
-  #app {
-    .container{
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #f8f8f8;
-      overflow: auto;
-    }
-    .inner{
-      padding: 40px 19px 0 19px;
-    }
-  }
 </style>

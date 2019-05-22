@@ -1,15 +1,33 @@
+// global page
+#app {
+  .container{
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #f8f8f8;
+    overflow: auto;
+  }
+  .hasMenu{
+    .inner{
+      padding-bottom: 150px;
+    }
+  }
+  .inner{
+    padding: 40px 19px 0 19px;
+  }
+}
 // footer menu svg icon
 .svg-icon{
   &.orange{
     color: @orange;
   }
 }
-// swipe
+// swipe banner
 .van-swipe{
   img.ignore{
     width: 100%;
-    max-width: 100%;
-    height: 160px;
   }
   .van-swipe__indicators{
     .van-swipe__indicator--active{

@@ -14,7 +14,7 @@ const router = new Router({
       name: 'home',
       component: Home,
       menu: true,
-      mate:{
+      meta:{
         title: '首页',
         icon: 'home'
       }
@@ -27,7 +27,7 @@ const router = new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "signup" */ '../views/SignUp.vue'),
       menu: true,
-      mate:{
+      meta:{
         title: '培训报名',
         icon: 'signup'
       }
@@ -40,7 +40,7 @@ const router = new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "test" */ '../views/Test.vue'),
       menu: true,
-      mate:{
+      meta:{
         title: '模拟考试',
         icon: 'test'
       }
@@ -53,7 +53,7 @@ const router = new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue'),
       menu: true,
-      mate:{
+      meta:{
         title: '我的',
         icon: 'account'
       }
@@ -77,11 +77,13 @@ router.beforeEach((to, from, next) => {
       } else {
         direction = 'slide-left'
       }
+
     }else{
       direction = 'fade'
     }
   }
-  store.dispatch('app/updateDirection',{ direction: direction })
+  store.dispatch('app/SetDirection',{ direction: direction })  // 页面切换时执行动画类型
+  store.dispatch('app/IsMenu',{ isMenu: isMenu ? true : false }) // 判断当前页面是否有底部菜单
   next()
 })
 

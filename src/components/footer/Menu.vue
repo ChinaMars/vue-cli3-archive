@@ -2,12 +2,12 @@
     <section class="menu" id="menu">
         <router-link v-for="item in menu" :key="item.name" :to="item.path">
             <svgicon
-                    :name="item.mate.icon"
+                    :name="item.meta.icon"
                     :class="{orange: item.path == $route.path}"
                     width="25"
                     height="25"
             ></svgicon>
-            <span>{{item.mate.title}}</span>
+            <span>{{item.meta.title}}</span>
         </router-link>
     </section>
 </template>

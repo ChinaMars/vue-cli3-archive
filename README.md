@@ -14,6 +14,9 @@ www.mars1992.cn
 [https://github.com/github/fetch](https://github.com/github/fetch)
 后续可能会修改为：axios
 
+## API接口使用(Easy Mock)
+[https://www.easy-mock.com/](https://www.easy-mock.com/)
+
 ## 网站UI使用了有赞的：
 [https://github.com/youzan/vant](https://github.com/youzan/vant)
 

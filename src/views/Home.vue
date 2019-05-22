@@ -43,14 +43,34 @@
                     </div>
                 </van-swipe-item>
             </van-swipe>
-            <van-tabs sticky>
+            <van-tabs sticky swipeable animated>
                 <van-tab v-for="(tabs,indexTabs) in homeData.tabs" :title="tabs.title" :key="indexTabs">
                     <div class="col" v-for="(item, indexTabsItem) in tabs.info" :key="indexTabsItem">
-                        <img class="ignore" :src="item.img" v-lazy="item.img"/>
+                        <div class="image">
+                            <img class="ignore" :src="item.img" v-lazy="item.img"/>
+                        </div>
+                        <div class="info">
+                            <h2>{{item.title}}</h2>
+                            <p>
+                                <span>开班时间：{{item.date}}</span>
+                                <span>人数：{{item.number}}</span>
+                            </p>
+                            <p>
+                                <span>{{item.school}}</span>
+                                <span v-if="item.recommend">推荐</span>
+                            </p>
+                            <p>
+                                <span>
+                                    <label v-for="(tag, indexTag) in item.tag" :key="indexTag">{{tag}}</label>
+                                </span>
+                                <span>
+                                    ￥{{item.price}}
+                                </span>
+                            </p>
+                        </div>
                     </div>
                 </van-tab>
             </van-tabs>
-            <router-link to="/login" id="router-link">点击领取</router-link>
         </section>
     </transition>
     <Menu></Menu>
@@ -107,19 +127,64 @@ export default {
 </script>
 
 <style lang="less">
-    #menu-list{
-        margin-top: 50px;
-        .van-swipe-item{
-            display: flex;
+    .home{
+        #menu-list{
+            margin-top: 50px;
+            .van-swipe-item{
+                display: flex;
+            }
+            .col{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                flex: 1;
+                span{
+                    padding-top: 20px;
+                    font-size: 28px;
+                }
+            }
         }
-        .col{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
-            span{
-                padding-top: 20px;
-                font-size: 28px;
+        .van-tabs{
+            &.van-tabs--line{
+                padding-top: 75px;
+            }
+            .van-tabs__wrap{
+                height: 75px;
+                .van-tab{
+                    line-height: 70px;
+                    font-size: 28px;
+                }
+            }
+            .van-tabs__content{
+                margin-top: 30px;
+            }
+            .col{
+                display: flex;
+                margin-bottom: 50px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                .image{
+                    img{
+                        border-radius: 10px;
+                    }
+                }
+                .info{
+                    padding-left: 20px;
+                    h2{
+                        width: 420px;
+                        margin-bottom: 20px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    p{
+                        margin-bottom: 10px;
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
+                    }
+                }
             }
         }
     }
@@ -129,8 +194,5 @@ export default {
     }
     [w-375-224]{
         aspect-ratio:'375:224';
-    }
-    .ignore{
-        width: 100px;
     }
 </style>
