@@ -55,7 +55,7 @@ export default {
             flex: 1;
             span{
                 display: block;
-                font-size: 16px;
+                font-size: 20px;
                 padding-top: 8px;
             }
             &.router-link-exact-active{

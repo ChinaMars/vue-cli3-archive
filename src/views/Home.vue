@@ -91,7 +91,7 @@
 // @ is an alias to /src
 import VueContentLoading from 'vue-content-loading'
 import { Swipe, SwipeItem, Tabs, Tab } from 'vant'
-import { home } from '../api/api'
+import { home } from '@/api/api'
 import common from '@/mixins/common'
 import Menu from '@/components/footer/Menu.vue'
 

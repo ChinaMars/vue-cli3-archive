@@ -1,7 +1,7 @@
 # vue-archive
 
 ## 线上网站访问链接：
-www.mars1992.cn
+m.mars1992.cn
 
 ## 参考了这些大神分享：
 [1.https://github.com/zhouyupeng/vue-cli3-H5](https://github.com/zhouyupeng/vue-cli3-H5)

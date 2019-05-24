@@ -9,7 +9,7 @@
   import Menu from '@/components/footer/Menu.vue'
 
   export default {
-    name: 'Test.vue',
+    name: 'Test',
     components: {
       Menu
     }

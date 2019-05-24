@@ -57,7 +57,8 @@ const router = new Router({
         title: '我的',
         icon: 'account'
       }
-    }
+    },
+    { path: '*', redirect: '/' }
   ]
 })
 
