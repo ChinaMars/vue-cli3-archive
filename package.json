@@ -15,6 +15,7 @@
     "postcss-aspect-ratio-mini": "^1.0.1",
     "postcss-px-to-viewport": "^1.1.0",
     "vant": "^1.6.15",
+    "vee-validate": "^2.2.8",
     "vue": "^2.6.6",
     "vue-content-loading": "^1.6.0",
     "vue-router": "^3.0.1",
