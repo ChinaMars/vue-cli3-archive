@@ -23,6 +23,12 @@ www.mars1992.cn
 ## 网站UI使用了有赞的：
 [https://github.com/youzan/vant](https://github.com/youzan/vant)
 
+## 表单验证使用(Vee-Validate)
+[https://github.com/baianat/vee-validate](https://github.com/baianat/vee-validate)
+
+## 网站使用 Svg Icon
+[https://github.com/MMF-FE/vue-svgicon](https://github.com/MMF-FE/vue-svgicon)
+
 ## 持续更新中。。。。。。（如果这个项目对你有帮助，请动动你的小手点个star,你的star是我的动力！！）
 
 ## Project setup
