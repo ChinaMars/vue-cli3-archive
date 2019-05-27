@@ -35,6 +35,8 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "normalize.css": "^8.0.1",
+    "postcss-write-svg": "jonathantneal/postcss-write-svg",
+    "style-resources-loader": "^1.2.1",
     "vue-svgicon": "^3.2.6",
     "vue-template-compiler": "^2.5.21"
   },

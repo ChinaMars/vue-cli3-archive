@@ -52,21 +52,21 @@
                         <div class="info">
                             <h2>{{item.title}}</h2>
                             <p>
-                                <span>开班时间：{{item.date}}</span>
-                                <span>人数：{{item.number}}</span>
+                                <span><span class="title">开班时间</span><span class="number">{{item.date}}</span></span>
+                                <span><span class="title">人数</span><span class="number"><span class="sign-up-num">{{item.number}}</span>/40</span></span>
                             </p>
-                            <p>
-                                <span>{{item.school}}</span>
-                                <span v-if="item.recommend">推荐</span>
-                            </p>
-                            <p>
-                                <span>
-                                    <label v-for="(tag, indexTag) in item.tag" :key="indexTag">{{tag}}</label>
-                                </span>
-                                <span>
-                                    ￥{{item.price}}
-                                </span>
-                            </p>
+                            <div class="info-bottom">
+                                <p>
+                                    <span>{{item.school}}</span>
+                                    <span v-if="item.recommend" class="recommend">推荐</span>
+                                </p>
+                                <p>
+                                    <span class="tag">
+                                        <label v-for="(tag, indexTag) in item.tag" :key="indexTag">{{tag}}</label>
+                                    </span>
+                                    <span class="price">￥{{item.price}}</span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </van-tab>
@@ -151,7 +151,7 @@ export default {
             .van-tabs__wrap{
                 height: 75px;
                 .van-tab{
-                    line-height: 70px;
+                    line-height: 75px;
                     font-size: 28px;
                 }
             }
@@ -161,6 +161,7 @@ export default {
             .col{
                 display: flex;
                 margin-bottom: 50px;
+                padding: 2px;
                 &:last-child{
                     margin-bottom: 0;
                 }
@@ -174,14 +175,71 @@ export default {
                     h2{
                         width: 420px;
                         margin-bottom: 20px;
+                        font-weight: 500;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         white-space: nowrap;
                     }
                     p{
-                        margin-bottom: 10px;
                         &:last-child{
                             margin-bottom: 0;
+                        }
+                        span{
+                            display: inline-block;
+                        }
+                        > span{
+                            margin-right: 20px;
+                            &:last-child{
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                    .info-bottom{
+                        p{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                    }
+                    .title{
+                        padding-right: 10px;
+                    }
+                    .recommend{
+                        border: 1px solid;
+                        border-image: svg(border1px param(--color @gray)) 1 stretch;
+                        color: @gray-xl;
+                        padding: 5px 10px 2px 10px;
+                        font-size: 18px;
+                    }
+                    .tag{
+                        label{
+                            padding: 8px 11px 2px 14px;
+                            border-radius: 5px;
+                            margin-right: 10px;
+                            position: relative;
+                            display: inline-block;
+                            &:after { //设置border-radicus时增加
+                                display: block;
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 200%;
+                                height: 200%;
+                                border: 1px solid @gray;
+                                border-radius: 10px;
+                                transform-origin: 0 0;
+                                transform: scale(0.5, 0.5);
+                            }
+                            &:last-child{
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                    .number{
+                        color: @gray;
+                        .sign-up-num{
+                            color: @blue;
                         }
                     }
                 }

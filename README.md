@@ -29,6 +29,9 @@ www.mars1992.cn
 ## 网站使用 Svg Icon
 [https://github.com/MMF-FE/vue-svgicon](https://github.com/MMF-FE/vue-svgicon)
 
+## 网站1x边框解决方案参考
+[https://github.com/smallcatcat-joe/webpack-esnext-vue-cli](https://github.com/smallcatcat-joe/webpack-esnext-vue-cli)
+
 ## 持续更新中。。。。。。（如果这个项目对你有帮助，请动动你的小手点个star,你的star是我的动力！！）
 
 ## Project setup
