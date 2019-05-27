@@ -3,7 +3,7 @@
 ## 电脑访问链接：
 www.mars1992.cn
 
-## 移动端访问链接：
+## 移动端访问二维码：
 ![Image text](https://github.com/ChinaMars/vue-archive/raw/master/readmePic/ewm.png)
 
 ## 参考了这些大神分享：
