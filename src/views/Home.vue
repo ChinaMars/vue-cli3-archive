@@ -43,7 +43,7 @@
                     </div>
                 </van-swipe-item>
             </van-swipe>
-            <van-tabs sticky swipeable animated>
+            <van-tabs sticky swipeable animated class="tabs">
                 <van-tab v-for="(tabs,indexTabs) in homeData.tabs" :title="tabs.title" :key="indexTabs">
                     <div class="col" v-for="(item, indexTabsItem) in tabs.info" :key="indexTabsItem">
                         <div class="image">
@@ -90,7 +90,7 @@
 <script>
 // @ is an alias to /src
 import VueContentLoading from 'vue-content-loading'
-import { Swipe, SwipeItem, Tabs, Tab } from 'vant'
+import { Swipe, SwipeItem, Tabs, Tab, Toast } from 'vant'
 import { home } from '@/api/api'
 import common from '@/mixins/common'
 import Menu from '@/components/footer/Menu.vue'
@@ -111,14 +111,21 @@ export default {
       homeData: {}
     }
   },
+  async created() {
+    await this.getHomeData()
+    this.loading = false
+  },
   mounted() {
-    home().then(res =>{
-      this.homeData = res.data
-      this.loading = false
-    })
+
   },
   methods: {
-
+    getHomeData() {
+      home().then((res) =>{
+        this.homeData = res.data.data
+      }).catch((err) =>{
+        Toast.fail(err.msg);
+      })
+    }
   },
   computed: {
 
@@ -144,23 +151,10 @@ export default {
                 }
             }
         }
-        .van-tabs{
-            &.van-tabs--line{
-                padding-top: 75px;
-            }
-            .van-tabs__wrap{
-                height: 75px;
-                .van-tab{
-                    line-height: 75px;
-                    font-size: 28px;
-                }
-            }
-            .van-tabs__content{
-                margin-top: 30px;
-            }
+        .tabs{
             .col{
                 display: flex;
-                margin-bottom: 50px;
+                margin-top: 50px;
                 padding: 2px;
                 &:last-child{
                     margin-bottom: 0;
@@ -174,7 +168,7 @@ export default {
                     padding-left: 20px;
                     h2{
                         width: 420px;
-                        margin-bottom: 20px;
+                        margin-bottom: 15px;
                         font-weight: 500;
                         overflow: hidden;
                         text-overflow: ellipsis;
@@ -213,7 +207,7 @@ export default {
                     }
                     .tag{
                         label{
-                            padding: 8px 11px 2px 14px;
+                            padding: 4px 11px 4px 14px;
                             border-radius: 5px;
                             margin-right: 10px;
                             position: relative;

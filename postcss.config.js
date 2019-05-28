@@ -11,7 +11,8 @@ module.exports = {
       "viewportUnit": "vw",
       "selectorBlackList": [
         ".ignore",
-        ".hairlines"
+        ".hairlines",
+        "van"
       ],
       "minPixelValue": 1,
       "mediaQuery": false

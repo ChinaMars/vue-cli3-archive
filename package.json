@@ -10,6 +10,7 @@
     "svg": "vsvg -s ./src/icons/svg -t ./src/icons/components --ext ts --es6"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "core-js": "^2.6.5",
     "lodash": "^4.17.11",
     "postcss-aspect-ratio-mini": "^1.0.1",
@@ -18,9 +19,9 @@
     "vee-validate": "^2.2.8",
     "vue": "^2.6.6",
     "vue-content-loading": "^1.6.0",
+    "vue-i18n": "^8.11.2",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1",
-    "whatwg-fetch": "^3.0.0"
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",
@@ -60,10 +61,5 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ],
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
+  ]
 }
