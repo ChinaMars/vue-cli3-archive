@@ -145,7 +145,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
     .home{
         #menu-list{
             margin-top: 50px;

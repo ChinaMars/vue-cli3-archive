@@ -26,7 +26,7 @@
   }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
     .register{
         h2{
             font-size: 36px;

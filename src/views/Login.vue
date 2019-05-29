@@ -16,6 +16,6 @@
   }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 
 </style>
