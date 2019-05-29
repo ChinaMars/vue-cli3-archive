@@ -1,0 +1,60 @@
+// flex 垂直居中
+.flex-vertical-middle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// flex 垂直左右贴边
+.flex-vertical-between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// 单行文字省略号
+.text-omit{
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// label 标签
+.label(@color: @white, @background: @blue, @border-color: @blue-xl){
+  color: @color;
+  background: @background;
+  position: absolute;
+  &:before{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    top: 100%;
+    left: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 0;
+    border-color: transparent @blue-xl transparent transparent;
+  }
+}
+
+// 1px 边框
+.border-1px(@border-color: @gray){
+  border: 1px solid;
+  border-image: svg(border1px param(--color @border-color)) 1 stretch;
+}
+
+// 1px 圆角边框
+.border-1px-radius(@border-color: @gray) {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid @border-color;
+  border-radius: 10px;
+  transform-origin: 0 0;
+  transform: scale(0.5, 0.5);
+}

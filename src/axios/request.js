@@ -25,8 +25,11 @@ function checkStatus(response) {
       let errMsg = ''
       switch (status) {
         case 400:
-          errMsg = 'XXX'
-          break
+          errMsg = '错误请求'
+          break;
+        case 404:
+          errMsg = '资源不存在';
+          break;
       }
       return {
         msg: errMsg
@@ -44,7 +47,7 @@ export default function request(url,{
   const defaultConfig = {
     url,
     method,
-    data: qs.stringify(data),
+    data: method == 'get' ? data : qs.stringify(data),
     //headers,
     responseType
   }

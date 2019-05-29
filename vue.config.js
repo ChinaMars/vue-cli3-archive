@@ -10,11 +10,11 @@ module.exports = {
     loaderOptions: {
       less: {
         modifyVars: {
-          red: '#03a9f4',
           blue: '#249ff6',
           orange: '#ff6600',
           'text-color': '#111'
-        }
+        },
+        javascriptEnabled: true
       }
     }
   },
@@ -34,7 +34,8 @@ module.exports = {
       .loader('style-resources-loader')
       .options({
         patterns: [
-          path.resolve(__dirname, './src/style/variables.less')
+          path.resolve(__dirname, './src/style/variables.less'),
+          path.resolve(__dirname, './src/style/mixins.less'),
         ],
       })
   }

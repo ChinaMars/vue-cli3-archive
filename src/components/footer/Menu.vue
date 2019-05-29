@@ -1,6 +1,6 @@
 <template>
     <section class="menu" id="menu">
-        <router-link v-for="item in menu" :key="item.name" :to="item.path">
+        <router-link v-for="item in menu" :key="item.name" :to="item.path" :class="{orange: item.path == $route.path}">
             <svgicon
                     :name="item.meta.icon"
                     :class="{orange: item.path == $route.path}"
@@ -47,9 +47,7 @@ export default {
         position: fixed;
         bottom: 0;
         padding: 10px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        .flex-vertical-middle;
         a{
             text-align: center;
             flex: 1;

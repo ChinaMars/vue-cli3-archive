@@ -13,9 +13,8 @@ www.mars1992.cn
 
 [3.https://github.com/HaoChuan9421/vue-cli3-optimization](https://github.com/HaoChuan9421/vue-cli3-optimization)
 
-## 网络请求使用了fetch:
-[https://github.com/github/fetch](https://github.com/github/fetch)
-后续可能会修改为：axios
+## 网络请求使用了axios:
+[https://github.com/axios/axios](https://github.com/axios/axios)
 
 ## API接口使用(Easy Mock)
 [https://www.easy-mock.com/](https://www.easy-mock.com/)
