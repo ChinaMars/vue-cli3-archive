@@ -20,7 +20,7 @@
   }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   @import (less) "~normalize.css";
   @import "~@/style/reset.less";
   @import "~@/style/common.less";
