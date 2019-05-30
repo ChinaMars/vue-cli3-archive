@@ -25,7 +25,7 @@ const router = new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "signup" */ '../views/SignUp.vue'),
+      component: () => import('../views/SignUp.vue'),
       menu: true,
       meta:{
         title: '培训报名',
@@ -35,10 +35,7 @@ const router = new Router({
     {
       path: '/test',
       name: 'test',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "test" */ '../views/Test.vue'),
+      component: () => import('../views/Test.vue'),
       menu: true,
       meta:{
         title: '模拟考试',
@@ -46,12 +43,9 @@ const router = new Router({
       }
     },
     {
-      path: '/login',
-      name: 'login',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue'),
+      path: '/register',
+      name: 'register',
+      component: () => import('../views/Register.vue'),
       menu: true,
       meta:{
         title: '我的',

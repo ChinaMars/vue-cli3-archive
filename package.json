@@ -10,16 +10,19 @@
     "svg": "vsvg -s ./src/icons/svg -t ./src/icons/components --ext ts --es6"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "core-js": "^2.6.5",
     "lodash": "^4.17.11",
     "postcss-aspect-ratio-mini": "^1.0.1",
     "postcss-px-to-viewport": "^1.1.0",
     "vant": "^1.6.15",
+    "vee-validate": "^2.2.8",
     "vue": "^2.6.6",
     "vue-content-loading": "^1.6.0",
+    "vue-i18n": "^8.11.2",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1",
-    "whatwg-fetch": "^3.0.0"
+    "vue-touch-ripple": "^3.0.0",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",
@@ -34,6 +37,8 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "normalize.css": "^8.0.1",
+    "postcss-write-svg": "jonathantneal/postcss-write-svg",
+    "style-resources-loader": "^1.2.1",
     "vue-svgicon": "^3.2.6",
     "vue-template-compiler": "^2.5.21"
   },
@@ -57,10 +62,5 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ],
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
+  ]
 }

@@ -13,15 +13,23 @@ www.mars1992.cn
 
 [3.https://github.com/HaoChuan9421/vue-cli3-optimization](https://github.com/HaoChuan9421/vue-cli3-optimization)
 
-## 网络请求使用了fetch:
-[https://github.com/github/fetch](https://github.com/github/fetch)
-后续可能会修改为：axios
+## 网络请求使用了axios:
+[https://github.com/axios/axios](https://github.com/axios/axios)
 
 ## API接口使用(Easy Mock)
 [https://www.easy-mock.com/](https://www.easy-mock.com/)
 
 ## 网站UI使用了有赞的：
 [https://github.com/youzan/vant](https://github.com/youzan/vant)
+
+## 表单验证使用(Vee-Validate)
+[https://github.com/baianat/vee-validate](https://github.com/baianat/vee-validate)
+
+## 网站使用 Svg Icon
+[https://github.com/MMF-FE/vue-svgicon](https://github.com/MMF-FE/vue-svgicon)
+
+## 网站1x边框解决方案参考
+[https://github.com/smallcatcat-joe/webpack-esnext-vue-cli](https://github.com/smallcatcat-joe/webpack-esnext-vue-cli)
 
 ## 持续更新中。。。。。。（如果这个项目对你有帮助，请动动你的小手点个star,你的star是我的动力！！）
 

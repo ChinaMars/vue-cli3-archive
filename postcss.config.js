@@ -1,6 +1,9 @@
 module.exports = {
   "plugins": {
     "autoprefixer": {},
+    "postcss-write-svg": {
+      utf8: false
+    },
     "postcss-px-to-viewport": {
       "viewportWidth": 750,
       "viewportHeight": 1334,
@@ -8,7 +11,8 @@ module.exports = {
       "viewportUnit": "vw",
       "selectorBlackList": [
         ".ignore",
-        ".hairlines"
+        ".hairlines",
+        "van"
       ],
       "minPixelValue": 1,
       "mediaQuery": false

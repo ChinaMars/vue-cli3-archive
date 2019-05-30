@@ -22,7 +22,6 @@
 
 <style lang="less">
   @import (less) "~normalize.css";
-  @import "~@/style/variables.less";
   @import "~@/style/reset.less";
   @import "~@/style/common.less";
 </style>

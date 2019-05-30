@@ -3,7 +3,7 @@
     <transition name="fade" mode="out-in">
         <section class="inner" v-if="loading" key="loading">
           <vue-content-loading
-              :height="600"
+              :height="680"
               :width="400"
               :speed="2"
               primaryColor="#f3f3f3"
@@ -23,6 +23,17 @@
               <rect x="0" y="285.78" rx="0" ry="0" width="130" height="67.45" />
               <rect x="140" y="285.78" rx="0" ry="0" width="130" height="67.45" />
               <rect x="280" y="284.78" rx="0" ry="0" width="130" height="67.45" />
+              <rect x="0" y="375" rx="0" ry="0" width="400" height="37.45"></rect>
+              <rect x="0" y="430" rx="5" ry="5" width="150" height="110"></rect>
+              <rect x="170" y="430" rx="0" ry="0" width="240" height="20"></rect>
+              <rect x="170" y="460" rx="0" ry="0" width="200" height="15"></rect>
+              <rect x="170" y="490" rx="0" ry="0" width="240" height="15"></rect>
+              <rect x="170" y="520" rx="0" ry="0" width="240" height="15"></rect>
+              <rect x="0" y="560" rx="5" ry="5" width="150" height="110"></rect>
+              <rect x="170" y="560" rx="0" ry="0" width="240" height="20"></rect>
+              <rect x="170" y="590" rx="0" ry="0" width="200" height="15"></rect>
+              <rect x="170" y="620" rx="0" ry="0" width="240" height="15"></rect>
+              <rect x="170" y="650" rx="0" ry="0" width="240" height="15"></rect>
           </vue-content-loading>
         </section>
         <section class="inner" v-else key="page">
@@ -43,30 +54,31 @@
                     </div>
                 </van-swipe-item>
             </van-swipe>
-            <van-tabs sticky swipeable animated>
+            <van-tabs sticky swipeable animated class="tabs">
                 <van-tab v-for="(tabs,indexTabs) in homeData.tabs" :title="tabs.title" :key="indexTabs">
                     <div class="col" v-for="(item, indexTabsItem) in tabs.info" :key="indexTabsItem">
                         <div class="image">
                             <img class="ignore" :src="item.img" v-lazy="item.img"/>
+                            <label class="label">{{item.label}}</label>
                         </div>
                         <div class="info">
                             <h2>{{item.title}}</h2>
                             <p>
-                                <span>开班时间：{{item.date}}</span>
-                                <span>人数：{{item.number}}</span>
+                                <span><span class="title">开班时间</span><span class="number">{{item.date}}</span></span>
+                                <span><span class="title">人数</span><span class="number"><span class="sign-up-num">{{item.number}}</span>/40</span></span>
                             </p>
-                            <p>
-                                <span>{{item.school}}</span>
-                                <span v-if="item.recommend">推荐</span>
-                            </p>
-                            <p>
-                                <span>
-                                    <label v-for="(tag, indexTag) in item.tag" :key="indexTag">{{tag}}</label>
-                                </span>
-                                <span>
-                                    ￥{{item.price}}
-                                </span>
-                            </p>
+                            <div class="info-bottom">
+                                <p>
+                                    <span>{{item.school}}</span>
+                                    <span v-if="item.recommend" class="recommend">推荐</span>
+                                </p>
+                                <p>
+                                    <span class="tag">
+                                        <label v-for="(tag, indexTag) in item.tag" :key="indexTag">{{tag}}</label>
+                                    </span>
+                                    <span class="price">￥<span>{{item.price}}</span></span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </van-tab>
@@ -90,7 +102,7 @@
 <script>
 // @ is an alias to /src
 import VueContentLoading from 'vue-content-loading'
-import { Swipe, SwipeItem, Tabs, Tab } from 'vant'
+import { Swipe, SwipeItem, Tabs, Tab, Toast } from 'vant'
 import { home } from '@/api/api'
 import common from '@/mixins/common'
 import Menu from '@/components/footer/Menu.vue'
@@ -111,14 +123,21 @@ export default {
       homeData: {}
     }
   },
+  async created() {
+    await this.getHomeData()
+    this.loading = false
+  },
   mounted() {
-    home().then(res =>{
-      this.homeData = res.data
-      this.loading = false
-    })
+
   },
   methods: {
-
+    getHomeData() {
+      home().then((res) =>{
+        this.homeData = res.data.data
+      }).catch((err) =>{
+        Toast.fail(err.msg);
+      })
+    }
   },
   computed: {
 
@@ -144,44 +163,88 @@ export default {
                 }
             }
         }
-        .van-tabs{
-            &.van-tabs--line{
-                padding-top: 75px;
-            }
-            .van-tabs__wrap{
-                height: 75px;
-                .van-tab{
-                    line-height: 70px;
-                    font-size: 28px;
-                }
-            }
-            .van-tabs__content{
-                margin-top: 30px;
-            }
+        .tabs{
             .col{
                 display: flex;
-                margin-bottom: 50px;
+                margin-top: 40px;
+                padding: 0 2px 0 20px;
                 &:last-child{
                     margin-bottom: 0;
                 }
                 .image{
+                    position: relative;
                     img{
                         border-radius: 10px;
+                    }
+                    .label{
+                        top: 15px;
+                        left: -10px;
+                        padding: 4px 10px;
+                        .label(@white,@blue,@blue-xl)
                     }
                 }
                 .info{
                     padding-left: 20px;
                     h2{
                         width: 420px;
-                        margin-bottom: 20px;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
+                        margin-bottom: 15px;
+                        font-weight: 500;
+                        .text-omit;
                     }
                     p{
-                        margin-bottom: 10px;
                         &:last-child{
                             margin-bottom: 0;
+                        }
+                        span{
+                            display: inline-block;
+                        }
+                        > span{
+                            margin-right: 20px;
+                            &:last-child{
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                    .info-bottom{
+                        p{
+                            .flex-vertical-between
+                        }
+                    }
+                    .title{
+                        padding-right: 10px;
+                    }
+                    .recommend{
+                        .border-1px(@gray);
+                        color: @gray-xl;
+                        padding: 5px 10px 2px 10px;
+                        font-size: 18px;
+                    }
+                    .tag{
+                        label{
+                            padding: 4px 11px 4px 14px;
+                            border-radius: 5px;
+                            margin-right: 10px;
+                            position: relative;
+                            display: inline-block;
+                            &:after { //设置1px-border-radicus时增加
+                                .border-1px-radius(@gray)
+                            }
+                            &:last-child{
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                    .number{
+                        color: @gray;
+                        .sign-up-num{
+                            color: @blue;
+                        }
+                    }
+                    .price{
+                        color: @orange;
+                        span{
+                            font-size: 36px;
+                            font-weight: bold;
                         }
                     }
                 }
