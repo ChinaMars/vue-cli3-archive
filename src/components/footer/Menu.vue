@@ -1,13 +1,17 @@
 <template>
     <section class="menu" id="menu">
-        <router-link v-for="item in menu" :key="item.name" :to="item.path" :class="{orange: item.path == $route.path}">
-            <svgicon
-                    :name="item.meta.icon"
-                    :class="{orange: item.path == $route.path}"
-                    width="25"
-                    height="25"
-            ></svgicon>
-            <span>{{item.meta.title}}</span>
+        <router-link v-for="item in menu" :key="item.name" :to="item.path">
+            <touch-ripple :speed="1" :opacity="0.5" color="#7b7b7b">
+                <div class="item">
+                    <svgicon
+                            :name="item.meta.icon"
+                            :class="{orange: item.path == $route.path}"
+                            width="25"
+                            height="25"
+                    ></svgicon>
+                    <span>{{item.meta.title}}</span>
+                </div>
+            </touch-ripple>
         </router-link>
     </section>
 </template>
@@ -18,7 +22,7 @@ import _ from 'lodash'
 export default {
     data() {
       return{
-        change: false
+
       }
     },
     mounted() {
@@ -47,10 +51,19 @@ export default {
         position: fixed;
         bottom: 0;
         padding: 10px 0;
-        .flex-vertical-middle;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         a{
             text-align: center;
             flex: 1;
+            .item{
+                width: 100px;
+                padding: 4px 0;
+            }
+            .ripple-inner{
+                border-radius: 100%;
+            }
             span{
                 display: block;
                 font-size: 20px;

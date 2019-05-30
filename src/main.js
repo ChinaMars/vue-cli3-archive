@@ -5,6 +5,8 @@ import store from '@/store'
 import VeeValidate from 'vee-validate';
 import * as CN from '@/locale/veeValidate/cn';
 import VueI18n from 'vue-i18n'
+import VueTouchRipple from 'vue-touch-ripple'
+import 'vue-touch-ripple/dist/vue-touch-ripple.css'
 import '@/icons'
 import { Lazyload } from 'vant'
 
@@ -25,6 +27,14 @@ Vue.use(VeeValidate, {
     CN
   }
 });
+
+Vue.use(VueTouchRipple, /* {
+  // default global options
+  color: '#fff',
+  opacity: 0.3,
+  speed: 1,
+  transition: 'ease'
+} */)
 
 Vue.config.productionTip = false
 

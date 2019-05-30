@@ -39,6 +39,17 @@
 }
 
 // 1px 边框
+@svg border1px {
+  width: 4px;
+  height: 4px;
+  @rect {
+    fill: transparent; // content为透明
+    width: 100%; // 宽度为4px * 100%
+    height: 100%; // 高度为4px * 100%
+    stroke-width: 25%; // 边框宽度 4px * 25%(即1px)
+    stroke: var(--color, @gray); // 颜色
+  }
+}
 .border-1px(@border-color: @gray){
   border: 1px solid;
   border-image: svg(border1px param(--color @border-color)) 1 stretch;

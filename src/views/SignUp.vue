@@ -1,6 +1,8 @@
 <template>
     <div class="sign-up">
-        <div>培训报名</div>
+        <section class="inner">
+            培训报名2222
+        </section>
         <Menu></Menu>
     </div>
 </template>
@@ -12,7 +14,10 @@
     name: 'SignUp',
     components: {
       Menu
-    }
+    },
+    created() {
+
+    },
   }
 </script>
 

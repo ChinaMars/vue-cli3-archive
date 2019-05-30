@@ -66,15 +66,14 @@ router.beforeEach((to, from, next) => {
     if (value.name == to.name) return value.menu
   })
   if (toIndex > -1 && fromIndex > -1) {
-    if(isMenu){
+    if(!isMenu){
       if (toIndex < fromIndex) {
         direction = 'slide-right'
       } else {
         direction = 'slide-left'
       }
-
     }else{
-      direction = 'fade'
+      direction = 'fade-slide'
     }
   }
   store.dispatch('app/SetDirection',{ direction: direction })  // 页面切换时执行动画类型

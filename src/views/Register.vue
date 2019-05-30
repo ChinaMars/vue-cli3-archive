@@ -16,12 +16,10 @@
 </template>
 
 <script>
-  import { touchRipple } from 'vue-touch-ripple'
-  import 'vue-touch-ripple/dist/vue-touch-ripple.css'
   export default {
     name: 'registered',
     components: {
-      touchRipple
+
     }
   }
 </script>

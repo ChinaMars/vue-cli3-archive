@@ -60,15 +60,28 @@
   width: 100%;
   height: 100%;
 }
-// page enter or leave fadein animate
+// 页面第一次加载动画
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s .5s;
+  transition: opacity .7s .5s;
 }
 .fade-enter, .fade-leave-to{
   opacity: 0;
 }
-// page enter or leave slide animate
-@transition-time: 300ms;
+// 页面切换谈入谈出动画
+.fade-slide-enter, .fade-slide-to{
+  opacity: 0;
+}
+.fade-slide-enter-active,.fade-slide-leave-active{
+  z-index: -1;
+}
+.fade-slide-leave-active{
+  transition: opacity .4s;
+}
+.fade-slide-enter-active{
+  transition: opacity .5s;
+}
+// 页面左右切换动画
+@transition-time: 400ms;
 .slide-right-enter-active,
 .slide-right-leave-active,
 .slide-left-enter-active,
