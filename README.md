@@ -31,6 +31,9 @@ www.mars1992.cn
 ## 网站1x边框解决方案参考
 [https://github.com/smallcatcat-joe/webpack-esnext-vue-cli](https://github.com/smallcatcat-joe/webpack-esnext-vue-cli)
 
+## 按钮点击水波纹动画
+[https://github.com/surmon-china/vue-touch-ripple](https://github.com/surmon-china/vue-touch-ripple)
+
 ## 持续更新中。。。。。。（如果这个项目对你有帮助，请动动你的小手点个star,你的star是我的动力！！）
 
 ## Project setup
