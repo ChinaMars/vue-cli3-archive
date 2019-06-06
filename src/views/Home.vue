@@ -125,10 +125,9 @@ export default {
   },
   async created() {
     await this.getHomeData()
-    this.loading = false
   },
   mounted() {
-
+    this.loading = false
   },
   methods: {
     getHomeData() {

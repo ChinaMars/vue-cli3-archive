@@ -1,4 +1,4 @@
-import request from '@/axios/request'
+import { request } from '@/axios/request'
 const method = {get: 'get', post: 'post'};
 
 export const home = () => request(

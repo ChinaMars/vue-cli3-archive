@@ -4,10 +4,8 @@ import app from './modules/index/app'
 
 Vue.use(Vuex)
 
-const store = new Vuex.Store({
+export const store = new Vuex.Store({
   modules: {
     app
   }
 })
-
-export default store

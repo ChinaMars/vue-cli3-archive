@@ -1,9 +1,13 @@
 import axios from 'axios'
 import qs from 'qs'
-import { Toast } from 'vant';
+import { Toast } from 'vant'
+import { store } from'../store/index'
+
+let isBaseApi = store.state.isBaseApi || false
+
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8' // post请求头的设置
 axios.defaults.timeout = 12000 // 请求超时时间
-axios.defaults.baseURL = process.env.VUE_APP_BASE_API
+axios.defaults.baseURL = isBaseApi ? process.env.VUE_APP_BASE_API : process.env.VUE_APP_EASY_MOCK_API
 
 axios.interceptors.request.use(config => {
   Toast.loading({
@@ -44,12 +48,12 @@ function checkStatus(response) {
   }
 }
 
-export default function request(url,{
+export const request = (url,{
   method = 'get',
   data = {},
   //headers = {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
   responseType = 'json'
-}) {
+}) => {
   const defaultConfig = {
     url,
     method,

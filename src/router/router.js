@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import store from '@/store/index'
+import { store } from '@/store/index'
 import Home from '@/views/Home.vue'
 import { objectKeyValue } from '@/utils/myUtils'
 

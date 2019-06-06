@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from '@/router/router'
-import store from '@/store'
+import { store } from '@/store'
 import VeeValidate from 'vee-validate';
 import * as cn from '@/locale/veeValidate/cn';
 import VueI18n from 'vue-i18n'
 import VueTouchRipple from 'vue-touch-ripple'
 import 'vue-touch-ripple/dist/vue-touch-ripple.css'
+import '@/utils/validator-new-rule'
 import '@/icons'
 import { Lazyload } from 'vant'
 
@@ -28,7 +29,8 @@ Vue.use(VeeValidate, {
   i18nRootKey: 'validations',
   dictionary: {
     cn
-  }
+  },
+  delay: 1500
 });
 
 Vue.use(VueTouchRipple, /* {

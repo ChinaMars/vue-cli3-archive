@@ -4,7 +4,8 @@ const app = {
   namespaced: true,
   state: {
     direction: '',
-    isMenu: true
+    isMenu: true,
+    isBaseApi: false
   },
   mutations: {
     [type.SET_DIRECTION] (state, payload) {
@@ -12,6 +13,10 @@ const app = {
     },
     [type.IS_MENU] (state, payload) {
       state.isMenu = payload.isMenu
+    },
+    [type.IS_BASE_API] (state, payload) {
+      console.log(payload)
+      state.isBaseApi = payload.isBaseApi
     }
   },
   actions: {
