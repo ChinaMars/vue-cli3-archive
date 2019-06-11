@@ -33,13 +33,12 @@ Vue.use(VeeValidate, {
   delay: 1500
 });
 
-Vue.use(VueTouchRipple, /* {
-  // default global options
-  color: '#fff',
+Vue.use(VueTouchRipple, {
+  color: '#7b7b7b',
   opacity: 0.3,
   speed: 1,
   transition: 'ease'
-} */)
+})
 
 Vue.config.productionTip = false
 

@@ -1,7 +1,7 @@
 <template>
     <section class="menu" id="menu">
         <router-link v-for="item in menu" :key="item.name" :to="item.path">
-            <touch-ripple :speed="1" :opacity="0.5" color="#7b7b7b">
+            <touch-ripple :opacity="0.5">
                 <div class="item">
                     <svgicon
                             :name="item.meta.icon"

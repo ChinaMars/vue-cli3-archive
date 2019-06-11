@@ -2,25 +2,29 @@
 .relative{
   position: relative;
 }
+.help.is-danger{
+  color: @red;
+  display: inline-block;
+}
+.container{
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: @white-xl;
+  overflow: auto;
+  .inner{
+    padding: 40px 19px 0 19px;
+    overflow: hidden;
+  }
+}
 #app {
   height: 100%;
-  .container{
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #f8f8f8;
-    overflow: auto;
-  }
   .hasMenu{
     .inner{
       padding-bottom: 150px;
     }
-  }
-  .inner{
-    padding: 40px 19px 0 19px;
-    overflow: hidden;
   }
 }
 .van-button{
@@ -46,7 +50,37 @@
     }
   }
 }
-
+// input
+.input-box{
+  margin-bottom: 20px;
+  &:last-child{
+    margin: 0;
+  }
+  input{
+    height: 50px;
+    line-height: 50px;
+    padding: 20px 0;
+    border: none;
+    width: 100%;
+    font-size: 30px;
+    border-bottom: 1px solid @gray-xl;
+    background: @white-xl;
+    &:focus{
+      border-color: @orange;
+      & ~ label{
+        top: -10px;
+        font-size: 22px;
+        color: @orange;
+      }
+    }
+  }
+  label{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    font-size: 30px;
+  }
+}
 // postcss-aspect-ratio-mini
 [aspectratio] {
   position: relative;
@@ -66,62 +100,4 @@
   bottom: 0;
   width: 100%;
   height: 100%;
-}
-// 页面第一次加载动画
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .7s .5s;
-}
-.fade-enter, .fade-leave-to{
-  opacity: 0;
-}
-// 页面切换谈入谈出动画
-.fade-slide-enter, .fade-slide-to{
-  opacity: 0;
-}
-.fade-slide-enter-active,.fade-slide-leave-active{
-  z-index: -1;
-}
-.fade-slide-leave-active{
-  transition: opacity .4s;
-}
-.fade-slide-enter-active{
-  transition: opacity .5s;
-}
-// 页面左右切换动画
-@transition-time: 400ms;
-.slide-right-enter-active,
-.slide-right-leave-active,
-.slide-left-enter-active,
-.slide-left-leave-active {
-  will-change: transform;
-  transition: all @transition-time;
-  position: absolute;
-  height: 100%;
-  backface-visibility: hidden;
-  perspective: 1000;
-  z-index: 99;
-}
-.slide-right-enter {
-  opacity: 0.75;
-  transform: translate3d(-35%, 0, 0) !important;
-}
-.slide-right-enter-active {
-  z-index: -1 !important;
-  transition: all @transition-time;
-}
-.slide-right-leave-active {
-  transform: translate3d(100%, 0, 0) !important;
-  transition: all @transition-time linear;
-}
-.slide-left-enter {
-  transform: translate3d(100%, 0, 0) !important;
-}
-.slide-left-enter-active {
-  transition: all @transition-time linear;
-}
-.slide-left-leave-active {
-  z-index: -1;
-  opacity: 0.65;
-  transform: translate3d(-35%, 0, 0) !important;
-  transition: all @transition-time linear;
 }

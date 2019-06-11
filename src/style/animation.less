@@ -1,0 +1,64 @@
+// 页面第一次加载动画
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .7s .5s;
+}
+.fade-enter, .fade-leave-to{
+  opacity: 0;
+}
+// 页面切换谈入谈出动画
+.fade-slide-enter, .fade-slide-to{
+  opacity: 0;
+}
+.fade-slide-enter-active,.fade-slide-leave-active{
+  z-index: -1;
+}
+.fade-slide-leave-active{
+  transition: opacity .4s;
+}
+.fade-slide-enter-active{
+  transition: opacity .5s;
+}
+// 页面左右切换动画
+@transition-time: 400ms;
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-left-enter-active,
+.slide-left-leave-active {
+  will-change: transform;
+  transition: all @transition-time;
+  position: absolute;
+  height: 100%;
+  backface-visibility: hidden;
+  perspective: 1000;
+  z-index: 99;
+}
+.slide-right-enter {
+  opacity: 0.75;
+  transform: translate3d(-35%, 0, 0) !important;
+}
+.slide-right-enter-active {
+  z-index: -1 !important;
+  transition: all @transition-time;
+}
+.slide-right-leave-active {
+  transform: translate3d(100%, 0, 0) !important;
+  transition: all @transition-time linear;
+}
+.slide-left-enter {
+  transform: translate3d(100%, 0, 0) !important;
+}
+.slide-left-enter-active {
+  transition: all @transition-time linear;
+}
+.slide-left-leave-active {
+  z-index: -1;
+  opacity: 0.65;
+  transform: translate3d(-35%, 0, 0) !important;
+  transition: all @transition-time linear;
+}
+// form input focus animation
+.input-box{
+  label{
+    transition: all 0.2s ease;
+  }
+}

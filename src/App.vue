@@ -24,4 +24,5 @@
   @import (less) "~normalize.css";
   @import "~@/style/reset.less";
   @import "~@/style/common.less";
+  @import "~@/style/animation.less";
 </style>
