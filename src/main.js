@@ -30,7 +30,7 @@ Vue.use(VeeValidate, {
   dictionary: {
     cn
   },
-  delay: 1500
+  delay: 500
 });
 
 Vue.use(VueTouchRipple, {

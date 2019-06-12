@@ -4,14 +4,14 @@
             <h2>注册帐户</h2>
             <form id="register-form">
                 <div class="input-box relative">
-                    <input id="phone" :class="{'input': true, 'is-danger': errors.has('phone')}" v-validate=" 'required|phone' " type="text" name="phone" />
+                    <input id="phone" :class="{'is-danger': errors.has('phone'), 'empty': registerForm.phone == ''}" v-validate=" 'required|phone' " type="text" name="phone" maxlength="11" v-model="registerForm.phone"/>
                     <label for="phone">*请输入手机码</label>
                     <small v-if="errors.has('phone')" class="help is-danger mt10">{{ errors.first('phone') }}</small>
                 </div>
                 <div class="input-box relative">
-                    <input id="VerificationCode" :class="{'input': true, 'is-danger': errors.has('VerificationCode')}" v-validate="'required|numeric'" type="text" name="VerificationCode" />
-                    <label for="VerificationCode">*请输入验证码</label>
-                    <small v-if="errors.has('VerificationCode')" class="help is-danger">{{ errors.first('phone') }}</small>
+                    <input id="verificationCode" :class="{'is-danger': errors.has('verificationCode'), 'empty': registerForm.verificationCode == ''}" v-validate="'required|numeric'" type="text" name="verificationCode" v-model="registerForm.verificationCode"/>
+                    <label for="verificationCode">*请输入验证码</label>
+                    <small v-if="errors.has('verificationCode')" class="help is-danger">{{ errors.first('verificationCode') }}</small>
                     <div class="button-wrap verification-code-button">
                         <touch-ripple>
                             <van-button native-type="button" size="small">获取验证码</van-button>
@@ -19,18 +19,18 @@
                     </div>
                 </div>
                 <div class="input-box relative">
-                    <input id="password" v-validate="'required'" name="password" type="password" :class="{'is-danger': errors.has('password')}" ref="password">
+                    <input id="password" v-validate="'required'" name="password" type="password" :class="{'is-danger': errors.has('password'), 'empty': registerForm.password == ''}" ref="password" v-model="registerForm.password">
                     <label for="password">*请输入密码(6 ~ 15位)</label>
                     <small v-if="errors.has('password')" class="help is-danger">{{ errors.first('password') }}</small>
                 </div>
                 <div class="input-box relative">
-                    <input id="password-confirmation" v-validate="'required|confirmed:password'" name="password-confirmation" type="password" :class="{'is-danger': errors.has('password-confirmation')}">
+                    <input id="password-confirmation" v-validate="'required|confirmed:password'" name="password-confirmation" type="password" :class="{'is-danger': errors.has('password-confirmation'), 'empty': registerForm.passwordConfirmation == ''}" v-model="registerForm.passwordConfirmation">
                     <label for="password-confirmation">*请输入确认密码</label>
                     <small v-if="errors.has('password-confirmation')" class="help is-danger">{{ errors.first('password-confirmation') }}</small>
                 </div>
                 <div class="submit" @click="submit">
-                    <touch-ripple :speed="1" :opacity="0.3" color="#fff" transition="ease">
-                        <button type="button">确认</button>
+                    <touch-ripple style="width: 100%">
+                        <van-button native-type="button" size="large">确认</van-button>
                     </touch-ripple>
                 </div>
             </form>
@@ -45,7 +45,17 @@
     export default {
         name: 'registered',
         components: {
-          [Button.name]: Button,
+            [Button.name]: Button,
+        },
+        data() {
+          return{
+            registerForm: {
+                phone:  '',
+                verificationCode: '',
+                password: '',
+                passwordConfirmation: ''
+            }
+          }
         },
         created() {
 
@@ -68,7 +78,7 @@
             padding: 100px 50px 50px 50px;
         }
         #register-form{
-            margin-top: 40px;
+            margin-top: 80px;
             .verification-code-button{
                 position: absolute;
                 right: 0;

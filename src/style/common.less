@@ -5,6 +5,7 @@
 .help.is-danger{
   color: @red;
   display: inline-block;
+  margin-top: 10px;
 }
 .container{
   height: 100%;
@@ -52,31 +53,31 @@
 }
 // input
 .input-box{
-  margin-bottom: 20px;
+  margin-bottom: 45px;
   &:last-child{
     margin: 0;
   }
   input{
-    height: 50px;
-    line-height: 50px;
+    height: 40px;
+    line-height: 40px;
     padding: 20px 0;
     border: none;
     width: 100%;
     font-size: 30px;
     border-bottom: 1px solid @gray-xl;
     background: @white-xl;
-    &:focus{
+    &:focus,&:hover,&:not(.empty){
       border-color: @orange;
       & ~ label{
-        top: -10px;
-        font-size: 22px;
+        top: -20px;
+        font-size: 24px;
         color: @orange;
       }
     }
   }
   label{
     position: absolute;
-    top: 30px;
+    top: 25px;
     left: 0;
     font-size: 30px;
   }

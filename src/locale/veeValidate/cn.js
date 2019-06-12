@@ -3,12 +3,13 @@ export const messages = {
   email : (field) => `${field}格式不正确`,
   phone: (field) => `${field}格式不正确`,
   password: (field) => `${field}不正确`,
-  confirmed: (field,e) => `不能和${e[0]}匹配`
+  confirmed: (field,e) => `${e[0]}不一致`
 };
 
 export const attributes = {
   email: "邮箱",
   phone: "手机号",
-  password_confirmation: "密码",
-  password: "密码"
+  passwordConfirmation: "密码",
+  password: "密码",
+  verificationCode: '验证码'
 }
