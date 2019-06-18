@@ -12,11 +12,12 @@
                     <input id="verificationCode" :class="{'is-danger': errors.has('verificationCode'), 'empty': registerForm.verificationCode == ''}" v-validate="'required|numeric'" type="text" name="verificationCode" v-model="registerForm.verificationCode"/>
                     <label for="verificationCode">*请输入验证码</label>
                     <small v-if="errors.has('verificationCode')" class="help is-danger">{{ errors.first('verificationCode') }}</small>
-                    <div class="button-wrap verification-code-button">
+                    <div v-if="!sendVerificationCode" class="button-wrap verification-code-button" @click="getVerificationCode">
                         <touch-ripple>
                             <van-button native-type="button" size="small">获取验证码</van-button>
                         </touch-ripple>
                     </div>
+                    <div class="button-wrap verification-code-disabled-button verification-code-button" v-else><van-button native-type="button" size="small">{{verificationCodeTime}}秒之后重新发送验证码</van-button></div>
                 </div>
                 <div class="input-box relative">
                     <input id="password" v-validate="'required'" name="password" type="password" :class="{'is-danger': errors.has('password'), 'empty': registerForm.password == ''}" ref="password" v-model="registerForm.password">
@@ -41,11 +42,13 @@
 <script>
     import { mapMutations } from 'vuex'
     import { Button } from 'vant'
+    import { Dialog } from 'vant';
 
     export default {
         name: 'registered',
         components: {
             [Button.name]: Button,
+            [Dialog.name]: Dialog
         },
         data() {
           return{
@@ -54,14 +57,39 @@
                 verificationCode: '',
                 password: '',
                 passwordConfirmation: ''
-            }
+            },
+            sendVerificationCode: false,
+            verificationCodeTime: 60
           }
         },
         created() {
 
         },
         methods: {
+            /* 是否使用正式域名接口 */
             ...mapMutations('app',['IS_BASE_API']),
+
+            /* 获取验证码弹窗 */
+            getVerificationCode() {
+                this.sendVerificationCode = true;
+
+                Dialog.alert({
+                    title: '验证码',
+                    message: '123456'
+                }).then(() => {
+                    // on close
+                });
+
+                let auth_timetimer =  setInterval(()=>{
+                    this.verificationCodeTime--
+                    if(this.verificationCodeTime<=0){
+                        this.sendVerificationCode = false
+                        this.verificationCodeTime = 60
+                        clearInterval(auth_timetimer)
+                    }
+                }, 1000);
+            },
+
             submit() {
                 this.IS_BASE_API(true)
             }
@@ -83,6 +111,11 @@
                 position: absolute;
                 right: 0;
                 top: 0;
+            }
+            .verification-code-disabled-button{
+                button{
+                    background: @gray-xl;
+                }
             }
         }
     }
