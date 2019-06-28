@@ -12,7 +12,7 @@
                     <input id="verificationCode" :class="{'is-danger': errors.has('verificationCode'), 'empty': registerForm.verificationCode == ''}" v-validate="'required|numeric'" type="text" name="verificationCode" v-model="registerForm.verificationCode"/>
                     <label for="verificationCode">*请输入验证码</label>
                     <small v-if="errors.has('verificationCode')" class="help is-danger">{{ errors.first('verificationCode') }}</small>
-                    <div v-if="!sendVerificationCode" class="button-wrap verification-code-button" @click="getVerificationCode">
+                    <div v-if="!sendVerificationCode" @touchstart="getVerificationCode" class="button-wrap verification-code-button">
                         <touch-ripple>
                             <van-button native-type="button" size="small">获取验证码</van-button>
                         </touch-ripple>
@@ -29,9 +29,9 @@
                     <label for="password-confirmation">*请输入确认密码</label>
                     <small v-if="errors.has('password-confirmation')" class="help is-danger">{{ errors.first('password-confirmation') }}</small>
                 </div>
-                <div class="submit" @click="submit">
+                <div class="submit">
                     <touch-ripple style="width: 100%">
-                        <van-button native-type="button" size="large">确认</van-button>
+                        <van-button native-type="button" size="large"  @touchstart="submit">确认</van-button>
                     </touch-ripple>
                 </div>
             </form>
@@ -91,6 +91,7 @@
             },
 
             submit() {
+                alert('submit')
                 this.IS_BASE_API(true)
             }
         }

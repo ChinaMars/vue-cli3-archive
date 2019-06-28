@@ -6,3 +6,10 @@ export const home = () => request(
     method: method.post
   }
 )
+
+export const details = (data) => request(
+  '/details',{
+    method: method.post,
+    data: data
+  }
+)
